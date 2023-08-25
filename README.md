@@ -1,2 +1,2 @@
-# ApaService
-Software Infrastructure for Information Management System
+# ApaService : Software Infrastructure for IMS projects
+The provided source code dates back to 2013 and was both designed and developed by me. It was associated with a software infrastructure intended for use in a project I was undertaking at the time. This software framework was a personal endeavor that I passionately pursued during my leisure hours. Regrettably, due to personal circumstances, I ceased its development and, unfortunately, did not document it. Despite over a decade having elapsed since its inception, there remains a possibility that it, or certain components of it, could be of value to someone. Consequently, this project is entirely open for use, and you are welcome to utilize it without any obligation to notify me.
