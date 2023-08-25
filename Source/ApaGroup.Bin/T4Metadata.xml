@@ -1,0 +1,1485 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <T4Metadata>
+    <Name>AdministratorAccountDataModelBase</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Account")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CreateDate</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UpdateDate</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UserId</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AccountType</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Image</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ChargeAmount</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Enable</Name>
+    <ParentName>AdministratorAccountDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(true)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorAccountAdministratorDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("AccountAdministrator")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorAccountAdministratorDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorAccountBuyerDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("AccountBuyer")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorAccountBuyerDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorAccountRequirementDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("AccountRequirement")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorAccountRequirementDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorAccountSellerDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("AccountSeller")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorAccountSellerDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>MinimumChargeAmountForSelling</Name>
+    <ParentName>AdministratorAccountSellerDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorAccountTransactionDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("AccountTransaction")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorAccountTransactionDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AccountId</Name>
+    <ParentName>AdministratorAccountTransactionDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorBasketDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Basket")][DataModel][DataContract(IsReference = true)][WorkflowProperty("Status", false)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CreateDate</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UpdateDate</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AccountBuyerId</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>SourceLocationId</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>DestinationLocationId</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopDeliveryMethodId</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopPaymentMethodId</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Fullname</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PhoneNumber</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>MobileNumber</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>DestinationAddress</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Status</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>StatusDescriptions</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Workflow</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UserDescription</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue("")][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>IsTheUserDescriptionNeededToConfirm</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>TotalItemsOriginAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>TotalItemsTaxAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>TotalItemsDiscountAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>DeliveryAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>TaxAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>DiscountAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ApaGroupCommissionAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>FinalAmount</Name>
+    <ParentName>AdministratorBasketDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorBasketItemDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("BasketItem")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>BasketId</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ProductId</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Ordered</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>OriginAmount</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>TaxAmount</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>DiscountAmount</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>FinalAmount</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Description</Name>
+    <ParentName>AdministratorBasketItemDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue("")][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorBasketTransactionDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("BasketTransaction")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorBasketTransactionDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>BasketId</Name>
+    <ParentName>AdministratorBasketTransactionDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorBrandDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Brand")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorBrandDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorBrandDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Title</Name>
+    <ParentName>AdministratorBrandDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LogoIdentifier</Name>
+    <ParentName>AdministratorBrandDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(null)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorCategoryDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Category")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ParentId</Name>
+    <ParentName>AdministratorCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>HierarchyCode</Name>
+    <ParentName>AdministratorCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Title</Name>
+    <ParentName>AdministratorCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LogoIdentifier</Name>
+    <ParentName>AdministratorCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(null)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorLocationDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Location")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ParentId</Name>
+    <ParentName>AdministratorLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>HierarchyCode</Name>
+    <ParentName>AdministratorLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Title</Name>
+    <ParentName>AdministratorLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LogoIdentifier</Name>
+    <ParentName>AdministratorLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(null)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PrivacyAccountPermission</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("PrivacyAccountPermission")]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PrivacyAccountPermissionGroup</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("PrivacyAccountPermissionGroup")]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PrivacyGroup</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("PrivacyGroup")]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PrivacyPermission</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("PrivacyPermission")]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PrivacyPermissionGroup</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("PrivacyPermissionGroup")]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PrivacySecureData</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("PrivacySecureData")]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorProductDataModelBase</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Product")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CreateDate</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UpdateDate</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>BrandId</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PersianName</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>EnglishName</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue("")][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>SearchHelper</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LogoIdentifier</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(null)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ExhibitionStartDate</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ExhibitionExpireDate</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>IsAvailable</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>IsModifingCausedDisable</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(true)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Enable</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>IsProductNeededToConfirm</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>IsPriceNeededToConfirm</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Properties</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>SelectableProperties</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>SupportedSelectableProperties</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AttachmentIdentifiers</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ImageIdentifiers</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Description</Name>
+    <ParentName>AdministratorProductDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue("")][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorProductCategoryDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ProductCategory")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorProductCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorProductCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ProductId</Name>
+    <ParentName>AdministratorProductCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CategoryId</Name>
+    <ParentName>AdministratorProductCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorProductCommentDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ProductComment")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorProductCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorProductCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ProductId</Name>
+    <ParentName>AdministratorProductCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Username</Name>
+    <ParentName>AdministratorProductCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CommentType</Name>
+    <ParentName>AdministratorProductCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Comment</Name>
+    <ParentName>AdministratorProductCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorProductNumerableDataModelBase</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ProductNumerable")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Weight</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Unit</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Store</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RetailUnitPriceAmount</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(null)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RetailConditions</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>WholesaleUnitPriceAmount</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(null)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>WholesaleConditions</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Tax</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Discount</Name>
+    <ParentName>AdministratorProductNumerableDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorProductRankDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ProductRank")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorProductRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorProductRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ProductId</Name>
+    <ParentName>AdministratorProductRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Username</Name>
+    <ParentName>AdministratorProductRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Rank</Name>
+    <ParentName>AdministratorProductRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorProductStatisticDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ProductStatistics")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorProductStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorProductStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LikeProduct</Name>
+    <ParentName>AdministratorProductStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>DislikeProduct</Name>
+    <ParentName>AdministratorProductStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>VisitCount</Name>
+    <ParentName>AdministratorProductStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>BoughtCount</Name>
+    <ParentName>AdministratorProductStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorResourceDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Resource")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorResourceDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorResourceDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Title</Name>
+    <ParentName>AdministratorResourceDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue("")][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ResourceIdentifier</Name>
+    <ParentName>AdministratorResourceDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Size</Name>
+    <ParentName>AdministratorResourceDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PhysicalAddress</Name>
+    <ParentName>AdministratorResourceDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Shop")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CreateDate</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UpdateDate</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AccountSellerId</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LocationId</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Enable</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PersianName</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>EnglishName</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue("")][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>SearchHelper</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LogoIdentifier</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(null)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AreBasketsNeededToConfirm</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ImageIdentifiers</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Tax</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Discount</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ApaGroupCommission</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Description</Name>
+    <ParentName>AdministratorShopDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue("")][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopCategoryDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ShopCategory")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorShopCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CategoryId</Name>
+    <ParentName>AdministratorShopCategoryDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopCommentDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ShopComment")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorShopCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Username</Name>
+    <ParentName>AdministratorShopCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CommentType</Name>
+    <ParentName>AdministratorShopCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Comment</Name>
+    <ParentName>AdministratorShopCommentDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopDeliveryMethodDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ShopDeliveryMethod")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopDeliveryMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopDeliveryMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorShopDeliveryMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Title</Name>
+    <ParentName>AdministratorShopDeliveryMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Type</Name>
+    <ParentName>AdministratorShopDeliveryMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Enable</Name>
+    <ParentName>AdministratorShopDeliveryMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopPaymentMethodDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ShopPaymentMethod")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopPaymentMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopPaymentMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorShopPaymentMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Title</Name>
+    <ParentName>AdministratorShopPaymentMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Type</Name>
+    <ParentName>AdministratorShopPaymentMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Enable</Name>
+    <ParentName>AdministratorShopPaymentMethodDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(false)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopRankDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ShopRank")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorShopRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Username</Name>
+    <ParentName>AdministratorShopRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Rank</Name>
+    <ParentName>AdministratorShopRankDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopServeLocationDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ShopServeLocation")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopServeLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopServeLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ShopId</Name>
+    <ParentName>AdministratorShopServeLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LocationId</Name>
+    <ParentName>AdministratorShopServeLocationDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorShopStatisticDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("ShopStatistics")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorShopStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorShopStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ApaGroupRank</Name>
+    <ParentName>AdministratorShopStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LikeShop</Name>
+    <ParentName>AdministratorShopStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>DislikeShop</Name>
+    <ParentName>AdministratorShopStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>BoughtCount</Name>
+    <ParentName>AdministratorShopStatisticDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorTransactionDataModelBase</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("Transaction")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>CreateDate</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UpdateDate</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ReferenceNumber</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>TransactionState</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>BuyerAccountNumber</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>TotalAmount</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>ReverseAmount</Name>
+    <ParentName>AdministratorTransactionDataModelBase</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][PropertyDefaultValue(0)][ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>AdministratorUserDataModel</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("User")][DataModel][DataContract(IsReference = true)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Id</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Username</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember][ValueChangePreventer(AccountType.Administrator | AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Name</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Family</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Gender</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PersonalCode</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Birthday</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PhoneNumber</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>MobileNumber</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Email</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>LocationId</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Address</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>PostalCode</Name>
+    <ParentName>AdministratorUserDataModel</ParentName>
+    <Type>Column</Type>
+    <Attribute>[DataMember]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>UserLogin</Name>
+    <ParentName />
+    <Type>Table</Type>
+    <Attribute>[DatabaseObject("UserLogin")][DataModel]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>RowVersion</Name>
+    <ParentName>UserLogin</ParentName>
+    <Type>Column</Type>
+    <Attribute>[ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Type</Name>
+    <ParentName>UserLogin</ParentName>
+    <Type>Column</Type>
+    <Attribute>[ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+  <T4Metadata>
+    <Name>Password</Name>
+    <ParentName>UserLogin</ParentName>
+    <Type>Column</Type>
+    <Attribute>[ValueChangePreventer(AccountType.Requirement | AccountType.Buyer | AccountType.Seller)]</Attribute>
+  </T4Metadata>
+</DocumentElement>

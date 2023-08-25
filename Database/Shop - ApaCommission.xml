@@ -1,0 +1,4 @@
+<ApaCommission class="Normal">
+	<BuyerCommission type="Constant/Percent" value="1000"  maximum="" />
+	<SellerCommission type="Constant/Percent" value="5" maximum="15000" />
+</ApaCommission>

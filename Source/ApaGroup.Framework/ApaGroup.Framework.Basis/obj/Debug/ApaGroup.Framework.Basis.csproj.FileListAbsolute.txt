@@ -1,0 +1,6 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaGroup.Framework.Basis.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaGroup.Framework.Basis.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Framework\ApaGroup.Framework.Basis\obj\Debug\ApaGroup.Framework.Basis.csprojResolveAssemblyReference.cache
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Framework\ApaGroup.Framework.Basis\obj\Debug\ApaGroup.Framework.Basis.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Framework\ApaGroup.Framework.Basis\obj\Debug\ApaGroup.Framework.Basis.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaGroup.Framework.Basis.dll.config

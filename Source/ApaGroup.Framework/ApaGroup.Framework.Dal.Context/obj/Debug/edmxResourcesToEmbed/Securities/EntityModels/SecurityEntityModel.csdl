@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SecurityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SecurityEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="SecurityAccountDataModelBases" EntityType="SecurityModel.SecurityAccountDataModelBase" />
+    <EntitySet Name="SecurityPrivacyAccountPermissionGroupDataModels" EntityType="SecurityModel.SecurityPrivacyAccountPermissionGroupDataModel" />
+    <EntitySet Name="SecurityPrivacyGroupDataModels" EntityType="SecurityModel.SecurityPrivacyGroupDataModel" />
+    <EntitySet Name="SecurityPrivacyPermissionDataModels" EntityType="SecurityModel.SecurityPrivacyPermissionDataModel" />
+    <EntitySet Name="SecurityPrivacyPermissionGroupDataModels" EntityType="SecurityModel.SecurityPrivacyPermissionGroupDataModel" />
+    <EntitySet Name="SecurityPrivacySecureDataDataModels" EntityType="SecurityModel.SecurityPrivacySecureDataDataModel" />
+    <EntitySet Name="SecurityPrivacyAccountPermissionDataModels" EntityType="SecurityModel.SecurityPrivacyAccountPermissionDataModel" />
+    <AssociationSet Name="FK_AccountPermissionGroup_Account" Association="SecurityModel.FK_AccountPermissionGroup_Account">
+      <End Role="Account" EntitySet="SecurityAccountDataModelBases" />
+      <End Role="PrivacyAccountPermissionGroup" EntitySet="SecurityPrivacyAccountPermissionGroupDataModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecureData_Account" Association="SecurityModel.FK_SecureData_Account">
+      <End Role="Account" EntitySet="SecurityAccountDataModelBases" />
+      <End Role="PrivacySecureData" EntitySet="SecurityPrivacySecureDataDataModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPermissionGroup_PermissionGroup" Association="SecurityModel.FK_AccountPermissionGroup_PermissionGroup">
+      <End Role="PrivacyPermissionGroup" EntitySet="SecurityPrivacyPermissionGroupDataModels" />
+      <End Role="PrivacyAccountPermissionGroup" EntitySet="SecurityPrivacyAccountPermissionGroupDataModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionGroup_Group" Association="SecurityModel.FK_PermissionGroup_Group">
+      <End Role="PrivacyGroup" EntitySet="SecurityPrivacyGroupDataModels" />
+      <End Role="PrivacyPermissionGroup" EntitySet="SecurityPrivacyPermissionGroupDataModels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionGroup_Permission" Association="SecurityModel.FK_PermissionGroup_Permission">
+      <End Role="PrivacyPermission" EntitySet="SecurityPrivacyPermissionDataModels" />
+      <End Role="PrivacyPermissionGroup" EntitySet="SecurityPrivacyPermissionGroupDataModels" />
+    </AssociationSet>
+    <EntitySet Name="SecurityUserDataModels" EntityType="SecurityModel.SecurityUserDataModel" />
+    <EntitySet Name="SecurityUserLoginDataModels" EntityType="SecurityModel.SecurityUserLoginDataModel" />
+    <AssociationSet Name="FK_Account_User" Association="SecurityModel.FK_Account_User">
+      <End Role="User" EntitySet="SecurityUserDataModels" />
+      <End Role="SecurityAccountDataModelBase" EntitySet="SecurityAccountDataModelBases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLogin_User" Association="SecurityModel.FK_UserLogin_User">
+      <End Role="User" EntitySet="SecurityUserDataModels" />
+      <End Role="UserLogin" EntitySet="SecurityUserLoginDataModels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="SecurityAccountDataModelBase">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Image" Type="Guid" />
+    <Property Name="ChargeAmount" Type="Int32" Nullable="false" />
+    <Property Name="Enable" Type="Boolean" Nullable="false" />
+    <Property Name="AccountType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SecurityPrivacyAccountPermissionGroupDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="PrivacyPermisionGroupId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SecurityPrivacyGroupDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SecurityPrivacyPermissionDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SecurityPrivacyPermissionGroupDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="PrivacyGroupId" Type="Int32" Nullable="false" />
+    <Property Name="PrivacyPermisionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SecurityPrivacySecureDataDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="TableId" Type="Int16" Nullable="false" />
+    <Property Name="SecureId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SecurityPrivacyAccountPermissionDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="AccountId" Type="Int32" Nullable="false" />
+    <Property Name="PrivacyPermisionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AccountPermissionGroup_Account">
+    <End Type="SecurityModel.SecurityAccountDataModelBase" Role="Account" Multiplicity="1" />
+    <End Type="SecurityModel.SecurityPrivacyAccountPermissionGroupDataModel" Role="PrivacyAccountPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyAccountPermissionGroup">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecureData_Account">
+    <End Type="SecurityModel.SecurityAccountDataModelBase" Role="Account" Multiplicity="1" />
+    <End Type="SecurityModel.SecurityPrivacySecureDataDataModel" Role="PrivacySecureData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacySecureData">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountPermissionGroup_PermissionGroup">
+    <End Type="SecurityModel.SecurityPrivacyPermissionGroupDataModel" Role="PrivacyPermissionGroup" Multiplicity="1" />
+    <End Type="SecurityModel.SecurityPrivacyAccountPermissionGroupDataModel" Role="PrivacyAccountPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivacyPermissionGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyAccountPermissionGroup">
+        <PropertyRef Name="PrivacyPermisionGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionGroup_Group">
+    <End Type="SecurityModel.SecurityPrivacyGroupDataModel" Role="PrivacyGroup" Multiplicity="1" />
+    <End Type="SecurityModel.SecurityPrivacyPermissionGroupDataModel" Role="PrivacyPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivacyGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyPermissionGroup">
+        <PropertyRef Name="PrivacyGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionGroup_Permission">
+    <End Type="SecurityModel.SecurityPrivacyPermissionDataModel" Role="PrivacyPermission" Multiplicity="1" />
+    <End Type="SecurityModel.SecurityPrivacyPermissionGroupDataModel" Role="PrivacyPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivacyPermission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyPermissionGroup">
+        <PropertyRef Name="PrivacyPermisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SecurityUserDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PersonalCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="SecurityUserLoginDataModel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+    <Property Name="Password" Type="Binary" Nullable="false" MaxLength="32" FixedLength="true" />
+  </EntityType>
+  <Association Name="FK_Account_User">
+    <End Type="SecurityModel.SecurityUserDataModel" Role="User" Multiplicity="1" />
+    <End Type="SecurityModel.SecurityAccountDataModelBase" Role="SecurityAccountDataModelBase" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SecurityAccountDataModelBase">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLogin_User">
+    <End Type="SecurityModel.SecurityUserDataModel" Role="User" Multiplicity="1" />
+    <End Type="SecurityModel.SecurityUserLoginDataModel" Role="UserLogin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

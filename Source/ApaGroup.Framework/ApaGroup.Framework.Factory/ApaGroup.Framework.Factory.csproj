@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8E54AC8-4165-4526-BE87-CD811173627B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApaGroup.Framework.Factory</RootNamespace>
+    <AssemblyName>ApaGroup.Framework.Factory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ApaGroup.Framework.Factory.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyIdentification\AssemblyIdentification.cs" />
+    <Compile Include="Auxiliaries\AuxiliaryFactory.cs" />
+    <Compile Include="Cores\Services\ServiceFactoryBase.cs" />
+    <Compile Include="DataObjects\DataObjectFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApaGroup.Framework.Basis\ApaGroup.Framework.Basis.csproj">
+      <Project>{ff5f7df0-e950-4b8c-9e71-732d1173ab4e}</Project>
+      <Name>ApaGroup.Framework.Basis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaGroup.Framework.Bol\ApaGroup.Framework.Bol.csproj">
+      <Project>{3f6cb8ac-4ffb-4c7c-843e-398bc4f28e0a}</Project>
+      <Name>ApaGroup.Framework.Bol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaGroup.Framework.Dal.DataStructure\ApaGroup.Framework.Dal.DataStructure.csproj">
+      <Project>{f1b4d98c-9e07-4189-acea-e4db6068628c}</Project>
+      <Name>ApaGroup.Framework.Dal.DataStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaGroup.Framework.IBol\ApaGroup.Framework.IBol.csproj">
+      <Project>{4d5ea17c-5ffc-48bd-aa66-1b2d9e31384b}</Project>
+      <Name>ApaGroup.Framework.IBol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaGroup.Framework.Identification\ApaGroup.Framework.Identification.csproj">
+      <Project>{47ccf950-2191-4fa5-b311-11ff54cadd85}</Project>
+      <Name>ApaGroup.Framework.Identification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaGroup.Framework.Shared\ApaGroup.Framework.Shared.csproj">
+      <Project>{cd361e78-95f7-4b35-ac80-9b43e9c30f12}</Project>
+      <Name>ApaGroup.Framework.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApaGroup.Framework.Factory.pfx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

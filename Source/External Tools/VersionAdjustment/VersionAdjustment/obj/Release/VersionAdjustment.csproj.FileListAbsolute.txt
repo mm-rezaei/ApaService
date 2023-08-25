@@ -1,0 +1,8 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\VersionAdjustment.exe
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\VersionAdjustment.pdb
+H:\IRAPA.ir\ApaService\Source\External Tools\VersionAdjustment\VersionAdjustment\obj\Release\VersionAdjustment.csprojResolveAssemblyReference.cache
+H:\IRAPA.ir\ApaService\Source\External Tools\VersionAdjustment\VersionAdjustment\obj\Release\VersionAdjustment.MainForm.resources
+H:\IRAPA.ir\ApaService\Source\External Tools\VersionAdjustment\VersionAdjustment\obj\Release\VersionAdjustment.Properties.Resources.resources
+H:\IRAPA.ir\ApaService\Source\External Tools\VersionAdjustment\VersionAdjustment\obj\Release\VersionAdjustment.csproj.GenerateResource.Cache
+H:\IRAPA.ir\ApaService\Source\External Tools\VersionAdjustment\VersionAdjustment\obj\Release\VersionAdjustment.exe
+H:\IRAPA.ir\ApaService\Source\External Tools\VersionAdjustment\VersionAdjustment\obj\Release\VersionAdjustment.pdb

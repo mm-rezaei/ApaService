@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF9CBF2C-D64E-4851-BE3D-980E7C700CDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApaService.Framework.Bol</RootNamespace>
+    <AssemblyName>ApaService.Framework.Bol</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ApaService.Framework.Bol.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApaGroup.Framework.Basis, Version=1.1.6.1311, Culture=neutral, PublicKeyToken=23b662233caec534, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Basis.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Bol, Version=1.1.6.1311, Culture=neutral, PublicKeyToken=57761125aa30564d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Bol.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Dal.Context, Version=1.1.6.1311, Culture=neutral, PublicKeyToken=2d4f22f430b9bd2f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Dal.Context.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Dal.DataStructure, Version=1.1.6.1311, Culture=neutral, PublicKeyToken=ae008d6d5a961d0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Dal.DataStructure.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Factory, Version=1.1.10.1312, Culture=neutral, PublicKeyToken=d59bc37bdb8ef264, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Factory.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.IBol, Version=1.1.6.1311, Culture=neutral, PublicKeyToken=7acf9ad0dcf50d50, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.IBol.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Identification">
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Identification.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Shared, Version=1.1.26.1401, Culture=neutral, PublicKeyToken=11daab349d5b532a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyIdentification\AssemblyIdentification.cs" />
+    <Compile Include="Constants\ApaServiceFrameworkBolConstant,.cs" />
+    <Compile Include="Cores\Factories\Services\ApasServiceFactoryBase.cs" />
+    <Compile Include="Cores\ServiceTemplates\ApasServiceTemplateBase.cs" />
+    <Compile Include="Cores\Auxiliaries\ApasAuxiliaryBase.cs" />
+    <Compile Include="Cores\Services\ApasServiceArgsBase.cs" />
+    <Compile Include="Cores\Services\ApasServiceBase.cs" />
+    <Compile Include="Cores\Validations\ApasValidationRuleBase.cs" />
+    <Compile Include="Cores\WorkflowMachines\ApasWorkflowActionBase.cs" />
+    <Compile Include="Cores\WorkflowMachines\ApasWorkflowMachineBase.cs" />
+    <Compile Include="Cores\WorkflowMachines\ApasWorkflowStateBase.cs" />
+    <Compile Include="Factories\Services\ServiceFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Administrator\AdministratorCategoryService.cs" />
+    <Compile Include="Services\Administrator\AdministratorLocationService.cs" />
+    <Compile Include="Services\ApasServiceArgs.cs" />
+    <Compile Include="Services\Administrator\AdministratorBrandService.cs" />
+    <Compile Include="ServiceTemplates\Administrator\AdministratorCategoryServiceTemplate.cs" />
+    <Compile Include="ServiceTemplates\Administrator\AdministratorBrandServiceTemplate.cs" />
+    <Compile Include="ServiceTemplates\Administrator\AdministratorLocationServiceTemplate.cs" />
+    <Compile Include="Validations\Administrator\AdministratorBrandValidationRule.cs" />
+    <Compile Include="Validations\Administrator\AdministratorCategoryValidationRule.cs" />
+    <Compile Include="Validations\Administrator\AdministratorLocationValidationRule.cs" />
+    <Compile Include="WorkflowMachines\ApasWorkflowAction.cs" />
+    <Compile Include="WorkflowMachines\ApasWorkflowMachine.cs" />
+    <Compile Include="WorkflowMachines\ApasWorkflowState.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApaService.Framework.Bol.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApaService.Framework.Dal.Context\ApaService.Framework.Dal.Context.csproj">
+      <Project>{cbc213cd-78c8-45d5-bcbf-8ad80fa38d85}</Project>
+      <Name>ApaService.Framework.Dal.Context</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaService.Framework.Dal.DataStructure\ApaService.Framework.Dal.DataStructure.csproj">
+      <Project>{131792fb-ea5c-4f1a-8d4c-aa00d0ef0766}</Project>
+      <Name>ApaService.Framework.Dal.DataStructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaService.Framework.IBol\ApaService.Framework.IBol.csproj">
+      <Project>{8ca7f9a4-64cb-481d-b731-f278c3b72d79}</Project>
+      <Name>ApaService.Framework.IBol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ApaService.Framework.Shared\ApaService.Framework.Shared.csproj">
+      <Project>{7edf7b25-ebbf-41e9-95eb-86f685cb8bf1}</Project>
+      <Name>ApaService.Framework.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

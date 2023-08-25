@@ -1,0 +1,5 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Comminucation\ApaService.Comminucation.Security\obj\Debug\ApaService.Comminucation.Security.csprojResolveAssemblyReference.cache
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Comminucation.Security.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Comminucation.Security.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Comminucation\ApaService.Comminucation.Security\obj\Debug\ApaService.Comminucation.Security.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Comminucation\ApaService.Comminucation.Security\obj\Debug\ApaService.Comminucation.Security.pdb

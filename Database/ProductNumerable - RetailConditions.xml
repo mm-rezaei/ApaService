@@ -1,0 +1,12 @@
+<RetailConditions class="Normal">
+	<RetailCondition default="true">
+		<UnitPrice value="55000" />
+		<MinimumOrder value="1" />
+		<Description value="" />
+	</RetailCondition>
+	<RetailCondition default="false">
+		<UnitPrice value="50000" />
+		<MinimumOrder value="10" />
+		<Description value="" />
+	</RetailCondition>
+</RetailConditions>

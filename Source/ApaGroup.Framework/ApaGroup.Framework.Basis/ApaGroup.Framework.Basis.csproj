@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FF5F7DF0-E950-4B8C-9E71-732D1173AB4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApaGroup.Framework.Basis</RootNamespace>
+    <AssemblyName>ApaGroup.Framework.Basis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ApaGroup.Framework.Basis.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyIdentification\AssemblyIdentification.cs" />
+    <Compile Include="Constants\ApaGroupFrameworkBasisConstant.cs" />
+    <Compile Include="Cores\Attributes\AttributeBase.cs" />
+    <Compile Include="Cores\Constants\ConstantBase.cs" />
+    <Compile Include="Cores\Exceptions\ExceptionArgs.cs" />
+    <Compile Include="Cores\Exceptions\ExceptionBase.cs" />
+    <Compile Include="Cores\Helpers\HelperBase.cs" />
+    <Compile Include="Cores\Systems\ApaGroupBase.cs" />
+    <Compile Include="EntityModels\ApaLogEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApaLogEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\ApaLogEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApaLogEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\ApaLogEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApaLogEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityModels\LogDataModel.cs">
+      <DependentUpon>ApaLogEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enumerations\ExceptionType.cs" />
+    <Compile Include="Cores\EventTracker\EventTrackerHandler.cs" />
+    <Compile Include="Cores\EventTracker\IEventTracker.cs" />
+    <Compile Include="Enumerations\LetterType.cs" />
+    <Compile Include="Enumerations\LogType.cs" />
+    <Compile Include="Exceptions\CacheException.cs" />
+    <Compile Include="Exceptions\EventTrackerException.cs" />
+    <Compile Include="Exceptions\FactoryException.cs" />
+    <Compile Include="Exceptions\FileException.cs" />
+    <Compile Include="Exceptions\GeneralIssueException.cs" />
+    <Compile Include="Exceptions\ModelValidationException.cs" />
+    <Compile Include="Exceptions\SecurityControlException.cs" />
+    <Compile Include="Exceptions\RegistryException.cs" />
+    <Compile Include="Exceptions\TypeConversionException.cs" />
+    <Compile Include="Exceptions\WorkflowActionNotFoundException.cs" />
+    <Compile Include="Exceptions\ConcurrencyException.cs" />
+    <Compile Include="Exceptions\ConfigurationManagementException.cs" />
+    <Compile Include="Exceptions\DatabaseException.cs" />
+    <Compile Include="Exceptions\InvalidServiceActionException.cs" />
+    <Compile Include="Exceptions\ReflectionException.cs" />
+    <Compile Include="Exceptions\WorkflowStateNotFoundException.cs" />
+    <Compile Include="Extensions\ExpressionExtension.cs" />
+    <Compile Include="Extensions\QueryableExtension.cs" />
+    <Compile Include="Factory\ExceptionFactory.cs" />
+    <Compile Include="Cores\Caches\CacheManagement.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helpers\ComparisonHelper.cs" />
+    <Compile Include="Helpers\ConfigurationManagementHelper.cs" />
+    <Compile Include="Helpers\ConvertorHelper.cs" />
+    <Compile Include="Cores\EventTracker\EventTrackerEngine.cs" />
+    <Compile Include="Helpers\HashingHelper.cs" />
+    <Compile Include="Helpers\IranDateTimeHelper.cs" />
+    <Compile Include="Helpers\ReflectionHelper.cs" />
+    <Compile Include="Helpers\SafeExecution.cs" />
+    <Compile Include="Locks\InternalLock.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApaGroup.Framework.Basis.pfx" />
+    <EntityDeploy Include="EntityModels\ApaLogEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ApaLogEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="EntityModels\ApaLogEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ApaLogEntityModel.edmx</DependentUpon>
+      <LastGenOutput>ApaLogEntityModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityModels\ApaLogEntityModel.edmx.diagram">
+      <DependentUpon>ApaLogEntityModel.edmx</DependentUpon>
+    </None>
+    <None Include="EntityModels\ApaLogEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ApaLogEntityModel.edmx</DependentUpon>
+      <LastGenOutput>ApaLogEntityModel.cs</LastGenOutput>
+    </None>
+    <None Include="Packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ApaGroup.Framework.Identification\ApaGroup.Framework.Identification.csproj">
+      <Project>{47ccf950-2191-4fa5-b311-11ff54cadd85}</Project>
+      <Name>ApaGroup.Framework.Identification</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
