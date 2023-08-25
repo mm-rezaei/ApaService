@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SecurityModelStoreContainer" CdmEntityContainer="SecurityEntities">
+    <EntitySetMapping Name="SecurityAccountDataModelBases">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityAccountDataModelBase">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="ChargeAmount" ColumnName="ChargeAmount" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityPrivacyAccountPermissionGroupDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityPrivacyAccountPermissionGroupDataModel">
+        <MappingFragment StoreEntitySet="PrivacyAccountPermissionGroup">
+          <ScalarProperty Name="PrivacyPermisionGroupId" ColumnName="PrivacyPermisionGroupId" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityPrivacyGroupDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityPrivacyGroupDataModel">
+        <MappingFragment StoreEntitySet="PrivacyGroup">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityPrivacyPermissionDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityPrivacyPermissionDataModel">
+        <MappingFragment StoreEntitySet="PrivacyPermission">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityPrivacyPermissionGroupDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityPrivacyPermissionGroupDataModel">
+        <MappingFragment StoreEntitySet="PrivacyPermissionGroup">
+          <ScalarProperty Name="PrivacyPermisionId" ColumnName="PrivacyPermisionId" />
+          <ScalarProperty Name="PrivacyGroupId" ColumnName="PrivacyGroupId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityPrivacySecureDataDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityPrivacySecureDataDataModel">
+        <MappingFragment StoreEntitySet="PrivacySecureData">
+          <ScalarProperty Name="SecureId" ColumnName="SecureId" />
+          <ScalarProperty Name="TableId" ColumnName="TableId" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityPrivacyAccountPermissionDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityPrivacyAccountPermissionDataModel">
+        <MappingFragment StoreEntitySet="PrivacyAccountPermission">
+          <ScalarProperty Name="PrivacyPermisionId" ColumnName="PrivacyPermisionId" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityUserDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityUserDataModel">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecurityUserLoginDataModels">
+      <EntityTypeMapping TypeName="SecurityModel.SecurityUserLoginDataModel">
+        <MappingFragment StoreEntitySet="UserLogin">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

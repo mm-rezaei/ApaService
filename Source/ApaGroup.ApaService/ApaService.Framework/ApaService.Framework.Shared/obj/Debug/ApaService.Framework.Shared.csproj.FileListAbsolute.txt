@@ -1,0 +1,5 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Framework.Shared.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Framework.Shared.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Framework\ApaService.Framework.Shared\obj\Debug\ApaService.Framework.Shared.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Framework\ApaService.Framework.Shared\obj\Debug\ApaService.Framework.Shared.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Framework\ApaService.Framework.Shared\obj\Debug\ApaService.Framework.Shared.csprojResolveAssemblyReference.cache

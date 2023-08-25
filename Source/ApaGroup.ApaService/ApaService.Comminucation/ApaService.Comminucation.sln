@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Comminucation.Bol", "ApaService.Comminucation.Bol\ApaService.Comminucation.Bol.csproj", "{2DC70F0B-DDB5-4A65-BF8D-9A9095AF37C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Comminucation.Service.Web", "ApaService.Comminucation.Service.Web\ApaService.Comminucation.Service.Web.csproj", "{846953D5-C531-4D4B-9744-F5D995F6F379}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Comminucation.Service.Win", "ApaService.Comminucation.Service.Win\ApaService.Comminucation.Service.Win.csproj", "{D39EC77B-8C4C-4DD2-A7F2-8AF0A984E788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Comminucation.Proxy.Web", "ApaService.Comminucation.Proxy.Web\ApaService.Comminucation.Proxy.Web.csproj", "{1C601D1A-A89D-4662-9578-27CF1B17CB47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Comminucation.Proxy.Win", "ApaService.Comminucation.Proxy.Win\ApaService.Comminucation.Proxy.Win.csproj", "{539537CE-6B80-45A4-B660-30E477FE5121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Comminucation.Security", "ApaService.Comminucation.Security\ApaService.Comminucation.Security.csproj", "{FDF983E4-9ED4-4494-A85D-305DB93576D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DC70F0B-DDB5-4A65-BF8D-9A9095AF37C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC70F0B-DDB5-4A65-BF8D-9A9095AF37C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC70F0B-DDB5-4A65-BF8D-9A9095AF37C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC70F0B-DDB5-4A65-BF8D-9A9095AF37C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846953D5-C531-4D4B-9744-F5D995F6F379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846953D5-C531-4D4B-9744-F5D995F6F379}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846953D5-C531-4D4B-9744-F5D995F6F379}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846953D5-C531-4D4B-9744-F5D995F6F379}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D39EC77B-8C4C-4DD2-A7F2-8AF0A984E788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D39EC77B-8C4C-4DD2-A7F2-8AF0A984E788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D39EC77B-8C4C-4DD2-A7F2-8AF0A984E788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D39EC77B-8C4C-4DD2-A7F2-8AF0A984E788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C601D1A-A89D-4662-9578-27CF1B17CB47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C601D1A-A89D-4662-9578-27CF1B17CB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C601D1A-A89D-4662-9578-27CF1B17CB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C601D1A-A89D-4662-9578-27CF1B17CB47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539537CE-6B80-45A4-B660-30E477FE5121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539537CE-6B80-45A4-B660-30E477FE5121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539537CE-6B80-45A4-B660-30E477FE5121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539537CE-6B80-45A4-B660-30E477FE5121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF983E4-9ED4-4494-A85D-305DB93576D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF983E4-9ED4-4494-A85D-305DB93576D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF983E4-9ED4-4494-A85D-305DB93576D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF983E4-9ED4-4494-A85D-305DB93576D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

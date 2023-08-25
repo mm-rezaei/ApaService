@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{131792FB-EA5C-4F1A-8D4C-AA00D0EF0766}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ApaService.Framework.Dal.DataStructure</RootNamespace>
+    <AssemblyName>ApaService.Framework.Dal.DataStructure</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\ApaGroup.Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>ApaService.Framework.Dal.DataStructure.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ApaGroup.Framework.Basis, Version=1.1.6.1311, Culture=neutral, PublicKeyToken=23b662233caec534, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Basis.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Dal.DataStructure, Version=1.1.6.1311, Culture=neutral, PublicKeyToken=ae008d6d5a961d0a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Dal.DataStructure.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Identification">
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Identification.dll</HintPath>
+    </Reference>
+    <Reference Include="ApaGroup.Framework.Shared, Version=1.1.26.1401, Culture=neutral, PublicKeyToken=11daab349d5b532a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\ApaGroup.Bin\ApaGroup.Framework.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyIdentification\AssemblyIdentification.cs" />
+    <Compile Include="Cores\DataModels\ApasDataModelBase.cs" />
+    <Compile Include="Cores\DataModels\IApasDataModel.cs" />
+    <Compile Include="Cores\DataObjects\ApasDataObjectBase.cs" />
+    <Compile Include="Cores\DataObjects\IApasDataObject.cs" />
+    <Compile Include="DataModels\AdministratorAccountAdministratorDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorAccountBuyerDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorAccountDataModelBase.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorAccountRequirementDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorAccountSellerDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorAccountTransactionDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorBasketDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorBasketItemDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorBasketTransactionDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorBrandDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorCategoryDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorLocationDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorProductCategoryDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorProductCommentDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorProductDataModelBase.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorProductNumerableDataModelBase.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorProductRankDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorProductStatisticDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorResourceDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopCategoryDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopCommentDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopDeliveryMethodDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopPaymentMethodDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopRankDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopServeLocationDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorShopStatisticDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorT4EntityFramework.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorTransactionDataModelBase.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\AdministratorUserDataModel.cs">
+      <DependentUpon>AdministratorT4EntityFramework.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ApaService.Framework.Dal.DataStructure.pfx" />
+    <None Include="DataModels\AdministratorT4EntityFramework.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AdministratorT4EntityFramework.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApaService.Framework.Shared\ApaService.Framework.Shared.csproj">
+      <Project>{7edf7b25-ebbf-41e9-95eb-86f685cb8bf1}</Project>
+      <Name>ApaService.Framework.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SecurityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="AccountType" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Image" Type="uniqueidentifier" />
+    <Property Name="ChargeAmount" Type="int" Nullable="false" />
+    <Property Name="Enable" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrivacyAccountPermissionGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="PrivacyPermisionGroupId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrivacyGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrivacyPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrivacyPermissionGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="PrivacyGroupId" Type="int" Nullable="false" />
+    <Property Name="PrivacyPermisionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PrivacySecureData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="TableId" Type="smallint" Nullable="false" />
+    <Property Name="SecureId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PersonalCode" Type="char" MaxLength="10" />
+    <Property Name="Birthday" Type="datetime" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+    <Property Name="MobileNumber" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LocationId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PostalCode" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Password" Type="binary" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'ApaService.dbo.PrivacyAccountPermission' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PrivacyAccountPermission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="AccountId" Type="int" Nullable="false" />
+    <Property Name="PrivacyPermisionId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Account_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountPermissionGroup_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="PrivacyAccountPermissionGroup" Type="Self.PrivacyAccountPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyAccountPermissionGroup">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AccountPermissionGroup_PermissionGroup">
+    <End Role="PrivacyPermissionGroup" Type="Self.PrivacyPermissionGroup" Multiplicity="1" />
+    <End Role="PrivacyAccountPermissionGroup" Type="Self.PrivacyAccountPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivacyPermissionGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyAccountPermissionGroup">
+        <PropertyRef Name="PrivacyPermisionGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionGroup_Group">
+    <End Role="PrivacyGroup" Type="Self.PrivacyGroup" Multiplicity="1" />
+    <End Role="PrivacyPermissionGroup" Type="Self.PrivacyPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivacyGroup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyPermissionGroup">
+        <PropertyRef Name="PrivacyGroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PermissionGroup_Permission">
+    <End Role="PrivacyPermission" Type="Self.PrivacyPermission" Multiplicity="1" />
+    <End Role="PrivacyPermissionGroup" Type="Self.PrivacyPermissionGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PrivacyPermission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacyPermissionGroup">
+        <PropertyRef Name="PrivacyPermisionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecureData_Account">
+    <End Role="Account" Type="Self.Account" Multiplicity="1" />
+    <End Role="PrivacySecureData" Type="Self.PrivacySecureData" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PrivacySecureData">
+        <PropertyRef Name="AccountId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLogin_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="UserLogin" Type="Self.UserLogin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SecurityModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrivacyAccountPermissionGroup" EntityType="Self.PrivacyAccountPermissionGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrivacyGroup" EntityType="Self.PrivacyGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrivacyPermission" EntityType="Self.PrivacyPermission" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrivacyPermissionGroup" EntityType="Self.PrivacyPermissionGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrivacySecureData" EntityType="Self.PrivacySecureData" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrivacyAccountPermission" EntityType="Self.PrivacyAccountPermission" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PrivacyAccountPermission].[Id] AS [Id], 
+    [PrivacyAccountPermission].[RowVersion] AS [RowVersion], 
+    [PrivacyAccountPermission].[AccountId] AS [AccountId], 
+    [PrivacyAccountPermission].[PrivacyPermisionId] AS [PrivacyPermisionId]
+    FROM [dbo].[PrivacyAccountPermission] AS [PrivacyAccountPermission]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Account_User" Association="Self.FK_Account_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPermissionGroup_Account" Association="Self.FK_AccountPermissionGroup_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="PrivacyAccountPermissionGroup" EntitySet="PrivacyAccountPermissionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AccountPermissionGroup_PermissionGroup" Association="Self.FK_AccountPermissionGroup_PermissionGroup">
+      <End Role="PrivacyPermissionGroup" EntitySet="PrivacyPermissionGroup" />
+      <End Role="PrivacyAccountPermissionGroup" EntitySet="PrivacyAccountPermissionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionGroup_Group" Association="Self.FK_PermissionGroup_Group">
+      <End Role="PrivacyGroup" EntitySet="PrivacyGroup" />
+      <End Role="PrivacyPermissionGroup" EntitySet="PrivacyPermissionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PermissionGroup_Permission" Association="Self.FK_PermissionGroup_Permission">
+      <End Role="PrivacyPermission" EntitySet="PrivacyPermission" />
+      <End Role="PrivacyPermissionGroup" EntitySet="PrivacyPermissionGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecureData_Account" Association="Self.FK_SecureData_Account">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="PrivacySecureData" EntitySet="PrivacySecureData" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLogin_User" Association="Self.FK_UserLogin_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserLogin" EntitySet="UserLogin" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

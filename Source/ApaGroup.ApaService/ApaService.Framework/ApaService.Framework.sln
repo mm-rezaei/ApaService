@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Framework.Bol", "ApaService.Framework.Bol\ApaService.Framework.Bol.csproj", "{FF9CBF2C-D64E-4851-BE3D-980E7C700CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Framework.Dal.Context", "ApaService.Framework.Dal.Context\ApaService.Framework.Dal.Context.csproj", "{CBC213CD-78C8-45D5-BCBF-8AD80FA38D85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Framework.IBol", "ApaService.Framework.IBol\ApaService.Framework.IBol.csproj", "{8CA7F9A4-64CB-481D-B731-F278C3B72D79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Framework.Shared", "ApaService.Framework.Shared\ApaService.Framework.Shared.csproj", "{7EDF7B25-EBBF-41E9-95EB-86F685CB8BF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApaService.Framework.Dal.DataStructure", "ApaService.Framework.Dal.DataStructure\ApaService.Framework.Dal.DataStructure.csproj", "{131792FB-EA5C-4F1A-8D4C-AA00D0EF0766}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF9CBF2C-D64E-4851-BE3D-980E7C700CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9CBF2C-D64E-4851-BE3D-980E7C700CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9CBF2C-D64E-4851-BE3D-980E7C700CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9CBF2C-D64E-4851-BE3D-980E7C700CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC213CD-78C8-45D5-BCBF-8AD80FA38D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC213CD-78C8-45D5-BCBF-8AD80FA38D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC213CD-78C8-45D5-BCBF-8AD80FA38D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC213CD-78C8-45D5-BCBF-8AD80FA38D85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA7F9A4-64CB-481D-B731-F278C3B72D79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA7F9A4-64CB-481D-B731-F278C3B72D79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA7F9A4-64CB-481D-B731-F278C3B72D79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA7F9A4-64CB-481D-B731-F278C3B72D79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EDF7B25-EBBF-41E9-95EB-86F685CB8BF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EDF7B25-EBBF-41E9-95EB-86F685CB8BF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EDF7B25-EBBF-41E9-95EB-86F685CB8BF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EDF7B25-EBBF-41E9-95EB-86F685CB8BF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{131792FB-EA5C-4F1A-8D4C-AA00D0EF0766}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{131792FB-EA5C-4F1A-8D4C-AA00D0EF0766}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{131792FB-EA5C-4F1A-8D4C-AA00D0EF0766}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{131792FB-EA5C-4F1A-8D4C-AA00D0EF0766}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

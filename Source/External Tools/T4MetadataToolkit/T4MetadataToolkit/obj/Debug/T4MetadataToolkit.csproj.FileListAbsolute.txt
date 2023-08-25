@@ -1,0 +1,8 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\T4MetadataToolkit.exe
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\T4MetadataToolkit.pdb
+H:\IRAPA.ir\ApaService\Source\External Tools\T4MetadataToolkit\T4MetadataToolkit\obj\Debug\T4MetadataToolkit.Ui.Win.MainForm.resources
+H:\IRAPA.ir\ApaService\Source\External Tools\T4MetadataToolkit\T4MetadataToolkit\obj\Debug\T4MetadataToolkit.Properties.Resources.resources
+H:\IRAPA.ir\ApaService\Source\External Tools\T4MetadataToolkit\T4MetadataToolkit\obj\Debug\T4MetadataToolkit.Ui.Win.PropertyAttributeForm.resources
+H:\IRAPA.ir\ApaService\Source\External Tools\T4MetadataToolkit\T4MetadataToolkit\obj\Debug\T4MetadataToolkit.csproj.GenerateResource.Cache
+H:\IRAPA.ir\ApaService\Source\External Tools\T4MetadataToolkit\T4MetadataToolkit\obj\Debug\T4MetadataToolkit.exe
+H:\IRAPA.ir\ApaService\Source\External Tools\T4MetadataToolkit\T4MetadataToolkit\obj\Debug\T4MetadataToolkit.pdb

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86f06f4860674ed294206b8d7f84232a" Name="Diagram1" ZoomLevel="94" ShowGrid="true">
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorAccountTransactionDataModel" Width="2.75" PointX="0.875" PointY="5.25" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorBasketTransactionDataModel" Width="2.75" PointX="0.875" PointY="13.125" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorTransactionDataModelBase" Width="2.75" PointX="0.875" PointY="8.375" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorAccountDataModelBase" Width="2.75" PointX="4.875" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorBasketDataModel" Width="2.75" PointX="4.875" PointY="8.375" />
+        <AssociationConnector Association="AdministratorModel.AccountAccountTransaction" />
+        <AssociationConnector Association="AdministratorModel.BasketBasketTransaction" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorProductDataModelBase" Width="2.75" PointX="17.75" PointY="8.5" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorProductCategoryDataModel" Width="2.75" PointX="21.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorProductCommentDataModel" Width="2.75" PointX="21.75" PointY="9.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorProductNumerableDataModelBase" Width="2.75" PointX="21.75" PointY="11.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorProductRankDataModel" Width="2.75" PointX="21.75" PointY="8.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorProductStatisticDataModel" Width="2.75" PointX="21.75" PointY="10" IsExpanded="false" />
+        <AssociationConnector Association="AdministratorModel.FK_ProductCategory_Product" />
+        <AssociationConnector Association="AdministratorModel.FK_ProductComment_Product" />
+        <AssociationConnector Association="AdministratorModel.FK_ProductRank_Product" />
+        <AssociationConnector Association="AdministratorModel.FK_ProductStatistics_Product" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopDataModel" Width="2.75" PointX="17.75" PointY="17.5" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopCategoryDataModel" Width="2.75" PointX="21.75" PointY="21.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopCommentDataModel" Width="2.75" PointX="21.75" PointY="17.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopDeliveryMethodDataModel" Width="2.75" PointX="21.75" PointY="20.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopPaymentMethodDataModel" Width="2.75" PointX="21.75" PointY="19.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopRankDataModel" Width="2.75" PointX="21.75" PointY="18.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopServeLocationDataModel" Width="2.75" PointX="21.75" PointY="22.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorShopStatisticDataModel" Width="2.75" PointX="21.75" PointY="22" IsExpanded="false" />
+        <AssociationConnector Association="AdministratorModel.FK_Basket_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_Product_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopCategory_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopComment_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopDeliveryMethod_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopPaymentMethod_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopRank_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopServeLocation_Shop" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopStatistics_Shop" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorAccountAdministratorDataModel" Width="2.75" PointX="13.375" PointY="4.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorAccountBuyerDataModel" Width="2.75" PointX="13.375" PointY="6.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorAccountRequirementDataModel" Width="2.75" PointX="13.375" PointY="4.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorAccountSellerDataModel" Width="2.75" PointX="13.375" PointY="5.625" IsExpanded="false" />
+        <AssociationConnector Association="AdministratorModel.FK_Basket_AccountBuyer" />
+        <AssociationConnector Association="AdministratorModel.FK_Shop_AccountSeller" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorBasketItemDataModel" Width="2.625" PointX="11.375" PointY="9.875" />
+        <AssociationConnector Association="AdministratorModel.FK_BasketItem_Basket" />
+        <AssociationConnector Association="AdministratorModel.FK_BasketItem_Product" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorBrandDataModel" Width="2.75" PointX="21.75" PointY="12.25" IsExpanded="false" />
+        <AssociationConnector Association="AdministratorModel.FK_Product_Brand" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorResourceDataModel" Width="2.75" PointX="17.75" PointY="4.125" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorCategoryDataModel" Width="2.75" PointX="30.125" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="AdministratorModel.FK_Category_Category" />
+        <AssociationConnector Association="AdministratorModel.FK_ProductCategory_Category" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopCategory_Category" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorUserDataModel" Width="2.75" PointX="0.875" PointY="0.5" />
+        <AssociationConnector Association="AdministratorModel.FK_Account_User" />
+        <EntityTypeShape EntityType="AdministratorModel.AdministratorLocationDataModel" Width="2.75" PointX="17.75" PointY="24.625" />
+        <AssociationConnector Association="AdministratorModel.FK_Basket_Location_DestinationLocation" />
+        <AssociationConnector Association="AdministratorModel.FK_Basket_Location_SourceLocation" />
+        <AssociationConnector Association="AdministratorModel.FK_Location_Location" />
+        <AssociationConnector Association="AdministratorModel.FK_Shop_Location" />
+        <AssociationConnector Association="AdministratorModel.FK_ShopServeLocation_Location" />
+        <InheritanceConnector EntityType="AdministratorModel.AdministratorAccountTransactionDataModel" />
+        <InheritanceConnector EntityType="AdministratorModel.AdministratorBasketTransactionDataModel" />
+        <InheritanceConnector EntityType="AdministratorModel.AdministratorProductNumerableDataModelBase" />
+        <InheritanceConnector EntityType="AdministratorModel.AdministratorAccountBuyerDataModel" />
+        <InheritanceConnector EntityType="AdministratorModel.AdministratorAccountSellerDataModel" />
+        <InheritanceConnector EntityType="AdministratorModel.AdministratorAccountAdministratorDataModel" />
+        <InheritanceConnector EntityType="AdministratorModel.AdministratorAccountRequirementDataModel" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

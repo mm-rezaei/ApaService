@@ -1,0 +1,5 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaGroup.Framework.IBol.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaGroup.Framework.IBol.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Framework\ApaGroup.Framework.IBol\obj\Debug\ApaGroup.Framework.IBol.csprojResolveAssemblyReference.cache
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Framework\ApaGroup.Framework.IBol\obj\Debug\ApaGroup.Framework.IBol.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Framework\ApaGroup.Framework.IBol\obj\Debug\ApaGroup.Framework.IBol.pdb

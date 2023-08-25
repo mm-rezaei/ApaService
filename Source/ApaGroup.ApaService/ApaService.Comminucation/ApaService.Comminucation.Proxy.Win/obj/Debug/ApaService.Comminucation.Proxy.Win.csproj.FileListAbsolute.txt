@@ -1,0 +1,5 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Comminucation\ApaService.Comminucation.Proxy.Win\obj\Debug\ApaService.Comminucation.Proxy.Win.csprojResolveAssemblyReference.cache
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Comminucation.Proxy.Win.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Comminucation.Proxy.Win.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Comminucation\ApaService.Comminucation.Proxy.Win\obj\Debug\ApaService.Comminucation.Proxy.Win.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Comminucation\ApaService.Comminucation.Proxy.Win\obj\Debug\ApaService.Comminucation.Proxy.Win.pdb

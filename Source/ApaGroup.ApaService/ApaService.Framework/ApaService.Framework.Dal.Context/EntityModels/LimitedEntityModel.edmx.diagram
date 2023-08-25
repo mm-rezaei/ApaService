@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="86f06f4860674ed294206b8d7f84232a" Name="Diagram1" ZoomLevel="94" ShowGrid="true">
+        <EntityTypeShape EntityType="LimitedModel.LimitedAccountTransactionDataModel" Width="2.75" PointX="0.875" PointY="5.25" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedBasketTransactionDataModel" Width="2.75" PointX="0.875" PointY="13.125" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedTransactionDataModelBase" Width="2.75" PointX="0.875" PointY="8.375" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedAccountDataModelBase" Width="2.75" PointX="4.875" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedBasketDataModel" Width="2.75" PointX="4.875" PointY="8.375" />
+        <AssociationConnector Association="LimitedModel.AccountAccountTransaction" />
+        <AssociationConnector Association="LimitedModel.BasketBasketTransaction" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedProductDataModelBase" Width="2.75" PointX="17.75" PointY="8.5" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedProductCategoryDataModel" Width="2.75" PointX="21.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedProductCommentDataModel" Width="2.75" PointX="21.75" PointY="9.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedProductNumerableDataModelBase" Width="2.75" PointX="21.75" PointY="11.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedProductRankDataModel" Width="2.75" PointX="21.75" PointY="8.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedProductStatisticDataModel" Width="2.75" PointX="21.75" PointY="10" IsExpanded="false" />
+        <AssociationConnector Association="LimitedModel.FK_ProductCategory_Product" />
+        <AssociationConnector Association="LimitedModel.FK_ProductComment_Product" />
+        <AssociationConnector Association="LimitedModel.FK_ProductRank_Product" />
+        <AssociationConnector Association="LimitedModel.FK_ProductStatistics_Product" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopDataModel" Width="2.75" PointX="17.75" PointY="17.5" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopCategoryDataModel" Width="2.75" PointX="21.75" PointY="21.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopCommentDataModel" Width="2.75" PointX="21.75" PointY="17.625" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopDeliveryMethodDataModel" Width="2.75" PointX="21.75" PointY="20.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopPaymentMethodDataModel" Width="2.75" PointX="21.75" PointY="19.375" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopRankDataModel" Width="2.75" PointX="21.75" PointY="18.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopServeLocationDataModel" Width="2.75" PointX="21.75" PointY="22.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedShopStatisticDataModel" Width="2.75" PointX="21.75" PointY="22" IsExpanded="false" />
+        <AssociationConnector Association="LimitedModel.FK_Basket_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_Product_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_ShopCategory_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_ShopComment_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_ShopDeliveryMethod_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_ShopPaymentMethod_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_ShopRank_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_ShopServeLocation_Shop" />
+        <AssociationConnector Association="LimitedModel.FK_ShopStatistics_Shop" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedAccountAdministratorDataModel" Width="2.75" PointX="13.375" PointY="4.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedAccountBuyerDataModel" Width="2.75" PointX="13.375" PointY="6.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedAccountRequirementDataModel" Width="2.75" PointX="13.375" PointY="4.125" IsExpanded="false" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedAccountSellerDataModel" Width="2.75" PointX="13.375" PointY="5.625" IsExpanded="false" />
+        <AssociationConnector Association="LimitedModel.FK_Basket_AccountBuyer" />
+        <AssociationConnector Association="LimitedModel.FK_Shop_AccountSeller" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="LimitedModel.LimitedBasketItemDataModel" Width="2.625" PointX="11.375" PointY="9.875" />
+        <AssociationConnector Association="LimitedModel.FK_BasketItem_Basket" />
+        <AssociationConnector Association="LimitedModel.FK_BasketItem_Product" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedBrandDataModel" Width="2.75" PointX="21.75" PointY="12.25" IsExpanded="false" />
+        <AssociationConnector Association="LimitedModel.FK_Product_Brand" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedResourceDataModel" Width="2.75" PointX="17.75" PointY="4.125" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedCategoryDataModel" Width="2.75" PointX="30.125" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="LimitedModel.FK_Category_Category" />
+        <AssociationConnector Association="LimitedModel.FK_ProductCategory_Category" />
+        <AssociationConnector Association="LimitedModel.FK_ShopCategory_Category" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedUserDataModel" Width="2.75" PointX="0.875" PointY="0.5" />
+        <AssociationConnector Association="LimitedModel.FK_Account_User" />
+        <EntityTypeShape EntityType="LimitedModel.LimitedLocationDataModel" Width="2.75" PointX="17.75" PointY="24.625" />
+        <AssociationConnector Association="LimitedModel.FK_Basket_Location_DestinationLocation" />
+        <AssociationConnector Association="LimitedModel.FK_Basket_Location_SourceLocation" />
+        <AssociationConnector Association="LimitedModel.FK_Location_Location" />
+        <AssociationConnector Association="LimitedModel.FK_Shop_Location" />
+        <AssociationConnector Association="LimitedModel.FK_ShopServeLocation_Location" />
+        <InheritanceConnector EntityType="LimitedModel.LimitedAccountTransactionDataModel" />
+        <InheritanceConnector EntityType="LimitedModel.LimitedBasketTransactionDataModel" />
+        <InheritanceConnector EntityType="LimitedModel.LimitedProductNumerableDataModelBase" />
+        <InheritanceConnector EntityType="LimitedModel.LimitedAccountBuyerDataModel" />
+        <InheritanceConnector EntityType="LimitedModel.LimitedAccountSellerDataModel" />
+        <InheritanceConnector EntityType="LimitedModel.LimitedAccountAdministratorDataModel" />
+        <InheritanceConnector EntityType="LimitedModel.LimitedAccountRequirementDataModel" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,12 @@
+<WholesaleUnitPrices class="Normal">
+	<WholesaleUnitPrice default="true">
+		<UnitPrice value="55000" />
+		<MinimumOrder value="1" />
+		<Description value="" />
+	</WholesaleUnitPrice>
+	<WholesaleUnitPrice default="false">
+		<UnitPrice value="50000" />
+		<MinimumOrder value="10" />
+		<Description value="" />
+	</WholesaleUnitPrice>
+</WholesaleUnitPrices>

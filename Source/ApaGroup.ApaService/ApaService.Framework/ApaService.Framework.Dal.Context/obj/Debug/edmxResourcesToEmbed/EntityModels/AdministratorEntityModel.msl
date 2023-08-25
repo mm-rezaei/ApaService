@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ApaServiceModelStoreContainer" CdmEntityContainer="AdministratorEntities">
+    <EntitySetMapping Name="AdministratorAccountDataModelBases">
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorAccountDataModelBase)">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="ChargeAmount" ColumnName="ChargeAmount" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorAccountBuyerDataModel)">
+        <MappingFragment StoreEntitySet="AccountBuyer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorAccountSellerDataModel)">
+        <MappingFragment StoreEntitySet="AccountSeller">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MinimumChargeAmountForSelling" ColumnName="MinimumChargeAmountForSelling" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorAccountAdministratorDataModel)">
+        <MappingFragment StoreEntitySet="AccountAdministrator">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorAccountRequirementDataModel)">
+        <MappingFragment StoreEntitySet="AccountRequirement">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorBasketDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorBasketDataModel">
+        <MappingFragment StoreEntitySet="Basket">
+          <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+          <ScalarProperty Name="ApaGroupCommissionAmount" ColumnName="ApaGroupCommissionAmount" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+          <ScalarProperty Name="DeliveryAmount" ColumnName="DeliveryAmount" />
+          <ScalarProperty Name="TotalItemsDiscountAmount" ColumnName="TotalItemsDiscountAmount" />
+          <ScalarProperty Name="TotalItemsTaxAmount" ColumnName="TotalItemsTaxAmount" />
+          <ScalarProperty Name="TotalItemsOriginAmount" ColumnName="TotalItemsOriginAmount" />
+          <ScalarProperty Name="IsTheUserDescriptionNeededToConfirm" ColumnName="IsTheUserDescriptionNeededToConfirm" />
+          <ScalarProperty Name="UserDescription" ColumnName="UserDescription" />
+          <ScalarProperty Name="Workflow" ColumnName="Workflow" />
+          <ScalarProperty Name="StatusDescriptions" ColumnName="StatusDescriptions" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="ShopPaymentMethodId" ColumnName="ShopPaymentMethodId" />
+          <ScalarProperty Name="ShopDeliveryMethodId" ColumnName="ShopDeliveryMethodId" />
+          <ScalarProperty Name="DestinationLocationId" ColumnName="DestinationLocationId" />
+          <ScalarProperty Name="SourceLocationId" ColumnName="SourceLocationId" />
+          <ScalarProperty Name="AccountBuyerId" ColumnName="AccountBuyerId" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorProductDataModelBases">
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorProductDataModelBase)">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="PersianName" ColumnName="PersianName" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="SearchHelper" ColumnName="SearchHelper" />
+          <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+          <ScalarProperty Name="ExhibitionStartDate" ColumnName="ExhibitionStartDate" />
+          <ScalarProperty Name="ExhibitionExpireDate" ColumnName="ExhibitionExpireDate" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="IsModifingCausedDisable" ColumnName="IsModifingCausedDisable" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="IsProductNeededToConfirm" ColumnName="IsProductNeededToConfirm" />
+          <ScalarProperty Name="IsPriceNeededToConfirm" ColumnName="IsPriceNeededToConfirm" />
+          <ScalarProperty Name="Properties" ColumnName="Properties" />
+          <ScalarProperty Name="SelectableProperties" ColumnName="SelectableProperties" />
+          <ScalarProperty Name="SupportedSelectableProperties" ColumnName="SupportedSelectableProperties" />
+          <ScalarProperty Name="AttachmentIdentifiers" ColumnName="AttachmentIdentifiers" />
+          <ScalarProperty Name="ImageIdentifiers" ColumnName="ImageIdentifiers" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorProductNumerableDataModelBase)">
+        <MappingFragment StoreEntitySet="ProductNumerable">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Store" ColumnName="Store" />
+          <ScalarProperty Name="RetailUnitPriceAmount" ColumnName="RetailUnitPriceAmount" />
+          <ScalarProperty Name="RetailConditions" ColumnName="RetailConditions" />
+          <ScalarProperty Name="WholesaleUnitPriceAmount" ColumnName="WholesaleUnitPriceAmount" />
+          <ScalarProperty Name="WholesaleConditions" ColumnName="WholesaleConditions" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorProductCategoryDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorProductCategoryDataModel">
+        <MappingFragment StoreEntitySet="ProductCategory">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorProductCommentDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorProductCommentDataModel">
+        <MappingFragment StoreEntitySet="ProductComment">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="CommentType" ColumnName="CommentType" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorProductRankDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorProductRankDataModel">
+        <MappingFragment StoreEntitySet="ProductRank">
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorProductStatisticDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorProductStatisticDataModel">
+        <MappingFragment StoreEntitySet="ProductStatistics">
+          <ScalarProperty Name="BoughtCount" ColumnName="BoughtCount" />
+          <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+          <ScalarProperty Name="DislikeProduct" ColumnName="DislikeProduct" />
+          <ScalarProperty Name="LikeProduct" ColumnName="LikeProduct" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopDataModel">
+        <MappingFragment StoreEntitySet="Shop">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ApaGroupCommission" ColumnName="ApaGroupCommission" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Tax" ColumnName="Tax" />
+          <ScalarProperty Name="ImageIdentifiers" ColumnName="ImageIdentifiers" />
+          <ScalarProperty Name="AreBasketsNeededToConfirm" ColumnName="AreBasketsNeededToConfirm" />
+          <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+          <ScalarProperty Name="SearchHelper" ColumnName="SearchHelper" />
+          <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+          <ScalarProperty Name="PersianName" ColumnName="PersianName" />
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="AccountSellerId" ColumnName="AccountSellerId" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopCategoryDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopCategoryDataModel">
+        <MappingFragment StoreEntitySet="ShopCategory">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopCommentDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopCommentDataModel">
+        <MappingFragment StoreEntitySet="ShopComment">
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="CommentType" ColumnName="CommentType" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopDeliveryMethodDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopDeliveryMethodDataModel">
+        <MappingFragment StoreEntitySet="ShopDeliveryMethod">
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopPaymentMethodDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopPaymentMethodDataModel">
+        <MappingFragment StoreEntitySet="ShopPaymentMethod">
+          <ScalarProperty Name="Enable" ColumnName="Enable" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopRankDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopRankDataModel">
+        <MappingFragment StoreEntitySet="ShopRank">
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopServeLocationDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopServeLocationDataModel">
+        <MappingFragment StoreEntitySet="ShopServeLocation">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorShopStatisticDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorShopStatisticDataModel">
+        <MappingFragment StoreEntitySet="ShopStatistics">
+          <ScalarProperty Name="BoughtCount" ColumnName="BoughtCount" />
+          <ScalarProperty Name="DislikeShop" ColumnName="DislikeShop" />
+          <ScalarProperty Name="LikeShop" ColumnName="LikeShop" />
+          <ScalarProperty Name="ApaGroupRank" ColumnName="ApaGroupRank" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorBasketItemDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorBasketItemDataModel">
+        <MappingFragment StoreEntitySet="BasketItem">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+          <ScalarProperty Name="OriginAmount" ColumnName="OriginAmount" />
+          <ScalarProperty Name="Ordered" ColumnName="Ordered" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="BasketId" ColumnName="BasketId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorBrandDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorBrandDataModel">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorResourceDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorResourceDataModel">
+        <MappingFragment StoreEntitySet="Resource">
+          <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="ResourceIdentifier" ColumnName="ResourceIdentifier" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorCategoryDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorCategoryDataModel">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="HierarchyCode" ColumnName="HierarchyCode" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorUserDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorUserDataModel">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorLocationDataModels">
+      <EntityTypeMapping TypeName="AdministratorModel.AdministratorLocationDataModel">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="HierarchyCode" ColumnName="HierarchyCode" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdministratorTransactionDataModelBases">
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorTransactionDataModelBase)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="Transaction">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="BuyerAccountNumber" ColumnName="BuyerAccountNumber" />
+          <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+          <ScalarProperty Name="ReverseAmount" ColumnName="ReverseAmount" />
+          <ScalarProperty Name="TransactionState" ColumnName="TransactionState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorAccountTransactionDataModel)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <MappingFragment StoreEntitySet="AccountTransaction">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AdministratorModel.AdministratorBasketTransactionDataModel)">
+        <MappingFragment StoreEntitySet="BasketTransaction">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BasketId" ColumnName="BasketId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

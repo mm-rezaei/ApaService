@@ -1,0 +1,2183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ApaServiceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Image" Type="uniqueidentifier" />
+          <Property Name="ChargeAmount" Type="int" Nullable="false" />
+          <Property Name="Enable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountAdministrator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountBuyer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountRequirement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountSeller">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MinimumChargeAmountForSelling" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AccountTransaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="AccountId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Basket">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="AccountBuyerId" Type="int" Nullable="false" />
+          <Property Name="SourceLocationId" Type="int" Nullable="false" />
+          <Property Name="DestinationLocationId" Type="int" Nullable="false" />
+          <Property Name="ShopDeliveryMethodId" Type="int" Nullable="false" />
+          <Property Name="ShopPaymentMethodId" Type="int" Nullable="false" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="DestinationAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StatusDescriptions" Type="xml" />
+          <Property Name="Workflow" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsTheUserDescriptionNeededToConfirm" Type="bit" Nullable="false" />
+          <Property Name="TotalItemsOriginAmount" Type="int" Nullable="false" />
+          <Property Name="TotalItemsTaxAmount" Type="int" Nullable="false" />
+          <Property Name="TotalItemsDiscountAmount" Type="int" Nullable="false" />
+          <Property Name="DeliveryAmount" Type="int" Nullable="false" />
+          <Property Name="TaxAmount" Type="int" Nullable="false" />
+          <Property Name="DiscountAmount" Type="int" Nullable="false" />
+          <Property Name="ApaGroupCommissionAmount" Type="int" Nullable="false" />
+          <Property Name="FinalAmount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BasketItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="BasketId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Ordered" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="OriginAmount" Type="int" Nullable="false" />
+          <Property Name="TaxAmount" Type="int" Nullable="false" />
+          <Property Name="DiscountAmount" Type="int" Nullable="false" />
+          <Property Name="FinalAmount" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="BasketTransaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="BasketId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LogoIdentifier" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="HierarchyCode" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LogoIdentifier" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="HierarchyCode" Type="char" MaxLength="40" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LogoIdentifier" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="BrandId" Type="int" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="PersianName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EnglishName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SearchHelper" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="LogoIdentifier" Type="uniqueidentifier" />
+          <Property Name="ExhibitionStartDate" Type="datetime" Nullable="false" />
+          <Property Name="ExhibitionExpireDate" Type="datetime" Nullable="false" />
+          <Property Name="IsAvailable" Type="bit" Nullable="false" />
+          <Property Name="IsModifingCausedDisable" Type="bit" Nullable="false" />
+          <Property Name="Enable" Type="bit" Nullable="false" />
+          <Property Name="IsProductNeededToConfirm" Type="bit" Nullable="false" />
+          <Property Name="IsPriceNeededToConfirm" Type="bit" Nullable="false" />
+          <Property Name="Properties" Type="xml" />
+          <Property Name="SelectableProperties" Type="xml" />
+          <Property Name="SupportedSelectableProperties" Type="xml" />
+          <Property Name="AttachmentIdentifiers" Type="xml" />
+          <Property Name="ImageIdentifiers" Type="xml" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CommentType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductNumerable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Store" Type="int" />
+          <Property Name="RetailUnitPriceAmount" Type="int" />
+          <Property Name="RetailConditions" Type="xml" />
+          <Property Name="WholesaleUnitPriceAmount" Type="int" />
+          <Property Name="WholesaleConditions" Type="xml" />
+          <Property Name="Tax" Type="xml" />
+          <Property Name="Discount" Type="xml" />
+        </EntityType>
+        <EntityType Name="ProductRank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rank" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductStatistics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="LikeProduct" Type="int" Nullable="false" />
+          <Property Name="DislikeProduct" Type="int" Nullable="false" />
+          <Property Name="VisitCount" Type="int" Nullable="false" />
+          <Property Name="BoughtCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResourceIdentifier" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="PhysicalAddress" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="AccountSellerId" Type="int" Nullable="false" />
+          <Property Name="LocationId" Type="int" Nullable="false" />
+          <Property Name="Enable" Type="bit" Nullable="false" />
+          <Property Name="PersianName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EnglishName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SearchHelper" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="LogoIdentifier" Type="uniqueidentifier" />
+          <Property Name="AreBasketsNeededToConfirm" Type="bit" Nullable="false" />
+          <Property Name="ImageIdentifiers" Type="xml" />
+          <Property Name="Tax" Type="xml" />
+          <Property Name="Discount" Type="xml" />
+          <Property Name="ApaGroupCommission" Type="xml" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ShopCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CommentType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopDeliveryMethod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Enable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopPaymentMethod">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Enable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopRank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rank" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopServeLocation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="LocationId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopStatistics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ApaGroupRank" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LikeShop" Type="int" Nullable="false" />
+          <Property Name="DislikeShop" Type="int" Nullable="false" />
+          <Property Name="BoughtCount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="ReferenceNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TransactionState" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BuyerAccountNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TotalAmount" Type="int" Nullable="false" />
+          <Property Name="ReverseAmount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PersonalCode" Type="char" MaxLength="10" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="11" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LocationId" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PostalCode" Type="char" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_Account_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Account" Type="Self.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountAdministrator_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="AccountAdministrator" Type="Self.AccountAdministrator" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountAdministrator">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountBuyer_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="AccountBuyer" Type="Self.AccountBuyer" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountBuyer">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountRequirement_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="AccountRequirement" Type="Self.AccountRequirement" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountRequirement">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountSeller_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="AccountSeller" Type="Self.AccountSeller" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountSeller">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountTransaction_Account">
+          <End Role="Account" Type="Self.Account" Multiplicity="1" />
+          <End Role="AccountTransaction" Type="Self.AccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountTransaction">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AccountTransaction_Transaction">
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="1" />
+          <End Role="AccountTransaction" Type="Self.AccountTransaction" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Transaction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountTransaction">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_AccountBuyer">
+          <End Role="AccountBuyer" Type="Self.AccountBuyer" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountBuyer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="AccountBuyerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_Location_DestinationLocation">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="DestinationLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_Location_SourceLocation">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="SourceLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="Basket" Type="Self.Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketItem_Basket">
+          <End Role="Basket" Type="Self.Basket" Multiplicity="1" />
+          <End Role="BasketItem" Type="Self.BasketItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketItem">
+              <PropertyRef Name="BasketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketItem_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="BasketItem" Type="Self.BasketItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketItem">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketTransaction_Basket">
+          <End Role="Basket" Type="Self.Basket" Multiplicity="1" />
+          <End Role="BasketTransaction" Type="Self.BasketTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketTransaction">
+              <PropertyRef Name="BasketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketTransaction_Transaction">
+          <End Role="Transaction" Type="Self.Transaction" Multiplicity="1" />
+          <End Role="BasketTransaction" Type="Self.BasketTransaction" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Transaction">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketTransaction">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Category_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Category1" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Category1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Location">
+          <End Role="Location" Type="Self.Location" Multiplicity="0..1" />
+          <End Role="Location1" Type="Self.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Location1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductComment_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductComment" Type="Self.ProductComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductComment">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductNumerable_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductNumerable" Type="Self.ProductNumerable" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductNumerable">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductRank_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductRank" Type="Self.ProductRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductRank">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStatistics_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductStatistics" Type="Self.ProductStatistics" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductStatistics">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_AccountSeller">
+          <End Role="AccountSeller" Type="Self.AccountSeller" Multiplicity="1" />
+          <End Role="Shop" Type="Self.Shop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSeller">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Shop">
+              <PropertyRef Name="AccountSellerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_Location">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="Shop" Type="Self.Shop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Shop">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopCategory_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="ShopCategory" Type="Self.ShopCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopCategory_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShopCategory" Type="Self.ShopCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopCategory">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopComment_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShopComment" Type="Self.ShopComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopComment">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopDeliveryMethod_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShopDeliveryMethod" Type="Self.ShopDeliveryMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopDeliveryMethod">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopPaymentMethod_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShopPaymentMethod" Type="Self.ShopPaymentMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopPaymentMethod">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopRank_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShopRank" Type="Self.ShopRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopRank">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopServeLocation_Location">
+          <End Role="Location" Type="Self.Location" Multiplicity="1" />
+          <End Role="ShopServeLocation" Type="Self.ShopServeLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopServeLocation">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopServeLocation_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShopServeLocation" Type="Self.ShopServeLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopServeLocation">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopStatistics_Shop">
+          <End Role="Shop" Type="Self.Shop" Multiplicity="1" />
+          <End Role="ShopStatistics" Type="Self.ShopStatistics" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopStatistics">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ApaServiceModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountAdministrator" EntityType="Self.AccountAdministrator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountBuyer" EntityType="Self.AccountBuyer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountRequirement" EntityType="Self.AccountRequirement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountSeller" EntityType="Self.AccountSeller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccountTransaction" EntityType="Self.AccountTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Basket" EntityType="Self.Basket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BasketItem" EntityType="Self.BasketItem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BasketTransaction" EntityType="Self.BasketTransaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductComment" EntityType="Self.ProductComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductNumerable" EntityType="Self.ProductNumerable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductRank" EntityType="Self.ProductRank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductStatistics" EntityType="Self.ProductStatistics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resource" EntityType="Self.Resource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shop" EntityType="Self.Shop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopCategory" EntityType="Self.ShopCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopComment" EntityType="Self.ShopComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopDeliveryMethod" EntityType="Self.ShopDeliveryMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopPaymentMethod" EntityType="Self.ShopPaymentMethod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopRank" EntityType="Self.ShopRank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopServeLocation" EntityType="Self.ShopServeLocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShopStatistics" EntityType="Self.ShopStatistics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaction" EntityType="Self.Transaction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Account_User" Association="Self.FK_Account_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountAdministrator_Account" Association="Self.FK_AccountAdministrator_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="AccountAdministrator" EntitySet="AccountAdministrator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountBuyer_Account" Association="Self.FK_AccountBuyer_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="AccountBuyer" EntitySet="AccountBuyer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountRequirement_Account" Association="Self.FK_AccountRequirement_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="AccountRequirement" EntitySet="AccountRequirement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountSeller_Account" Association="Self.FK_AccountSeller_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="AccountSeller" EntitySet="AccountSeller" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountTransaction_Account" Association="Self.FK_AccountTransaction_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="AccountTransaction" EntitySet="AccountTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AccountTransaction_Transaction" Association="Self.FK_AccountTransaction_Transaction">
+            <End Role="Transaction" EntitySet="Transaction" />
+            <End Role="AccountTransaction" EntitySet="AccountTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_AccountBuyer" Association="Self.FK_Basket_AccountBuyer">
+            <End Role="AccountBuyer" EntitySet="AccountBuyer" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_Location_DestinationLocation" Association="Self.FK_Basket_Location_DestinationLocation">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_Location_SourceLocation" Association="Self.FK_Basket_Location_SourceLocation">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_Shop" Association="Self.FK_Basket_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="Basket" EntitySet="Basket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketItem_Basket" Association="Self.FK_BasketItem_Basket">
+            <End Role="Basket" EntitySet="Basket" />
+            <End Role="BasketItem" EntitySet="BasketItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketItem_Product" Association="Self.FK_BasketItem_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="BasketItem" EntitySet="BasketItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketTransaction_Basket" Association="Self.FK_BasketTransaction_Basket">
+            <End Role="Basket" EntitySet="Basket" />
+            <End Role="BasketTransaction" EntitySet="BasketTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketTransaction_Transaction" Association="Self.FK_BasketTransaction_Transaction">
+            <End Role="Transaction" EntitySet="Transaction" />
+            <End Role="BasketTransaction" EntitySet="BasketTransaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Category_Category" Association="Self.FK_Category_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Category1" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Location" Association="Self.FK_Location_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Location1" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Brand" Association="Self.FK_Product_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Shop" Association="Self.FK_Product_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory_Category" Association="Self.FK_ProductCategory_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory_Product" Association="Self.FK_ProductCategory_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductComment_Product" Association="Self.FK_ProductComment_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductComment" EntitySet="ProductComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductNumerable_Product" Association="Self.FK_ProductNumerable_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductNumerable" EntitySet="ProductNumerable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductRank_Product" Association="Self.FK_ProductRank_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductRank" EntitySet="ProductRank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStatistics_Product" Association="Self.FK_ProductStatistics_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductStatistics" EntitySet="ProductStatistics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_AccountSeller" Association="Self.FK_Shop_AccountSeller">
+            <End Role="AccountSeller" EntitySet="AccountSeller" />
+            <End Role="Shop" EntitySet="Shop" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_Location" Association="Self.FK_Shop_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Shop" EntitySet="Shop" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopCategory_Category" Association="Self.FK_ShopCategory_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ShopCategory" EntitySet="ShopCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopCategory_Shop" Association="Self.FK_ShopCategory_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopCategory" EntitySet="ShopCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopComment_Shop" Association="Self.FK_ShopComment_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopComment" EntitySet="ShopComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopDeliveryMethod_Shop" Association="Self.FK_ShopDeliveryMethod_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopDeliveryMethod" EntitySet="ShopDeliveryMethod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopPaymentMethod_Shop" Association="Self.FK_ShopPaymentMethod_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopPaymentMethod" EntitySet="ShopPaymentMethod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopRank_Shop" Association="Self.FK_ShopRank_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopRank" EntitySet="ShopRank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopServeLocation_Location" Association="Self.FK_ShopServeLocation_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="ShopServeLocation" EntitySet="ShopServeLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopServeLocation_Shop" Association="Self.FK_ShopServeLocation_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopServeLocation" EntitySet="ShopServeLocation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopStatistics_Shop" Association="Self.FK_ShopStatistics_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopStatistics" EntitySet="ShopStatistics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LimitedModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LimitedEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LimitedAccountDataModelBases" EntityType="LimitedModel.LimitedAccountDataModelBase" />
+          <EntitySet Name="LimitedBasketDataModels" EntityType="LimitedModel.LimitedBasketDataModel" />
+          <AssociationSet Name="AccountAccountTransaction" Association="LimitedModel.AccountAccountTransaction">
+            <End Role="Account" EntitySet="LimitedAccountDataModelBases" />
+            <End Role="AccountTransaction" EntitySet="LimitedTransactionDataModelBases" />
+          </AssociationSet>
+          <AssociationSet Name="BasketBasketTransaction" Association="LimitedModel.BasketBasketTransaction">
+            <End Role="Basket" EntitySet="LimitedBasketDataModels" />
+            <End Role="BasketTransaction" EntitySet="LimitedTransactionDataModelBases" />
+          </AssociationSet>
+          <EntitySet Name="LimitedProductDataModelBases" EntityType="LimitedModel.LimitedProductDataModelBase" />
+          <EntitySet Name="LimitedProductCategoryDataModels" EntityType="LimitedModel.LimitedProductCategoryDataModel" />
+          <EntitySet Name="LimitedProductCommentDataModels" EntityType="LimitedModel.LimitedProductCommentDataModel" />
+          <EntitySet Name="LimitedProductRankDataModels" EntityType="LimitedModel.LimitedProductRankDataModel" />
+          <EntitySet Name="LimitedProductStatisticDataModels" EntityType="LimitedModel.LimitedProductStatisticDataModel" />
+          <AssociationSet Name="FK_ProductCategory_Product" Association="LimitedModel.FK_ProductCategory_Product">
+            <End Role="Product" EntitySet="LimitedProductDataModelBases" />
+            <End Role="ProductCategory" EntitySet="LimitedProductCategoryDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductComment_Product" Association="LimitedModel.FK_ProductComment_Product">
+            <End Role="Product" EntitySet="LimitedProductDataModelBases" />
+            <End Role="ProductComment" EntitySet="LimitedProductCommentDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductRank_Product" Association="LimitedModel.FK_ProductRank_Product">
+            <End Role="Product" EntitySet="LimitedProductDataModelBases" />
+            <End Role="ProductRank" EntitySet="LimitedProductRankDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductStatistics_Product" Association="LimitedModel.FK_ProductStatistics_Product">
+            <End Role="Product" EntitySet="LimitedProductDataModelBases" />
+            <End Role="ProductStatistic" EntitySet="LimitedProductStatisticDataModels" />
+          </AssociationSet>
+          <EntitySet Name="LimitedShopDataModels" EntityType="LimitedModel.LimitedShopDataModel" />
+          <EntitySet Name="LimitedShopCategoryDataModels" EntityType="LimitedModel.LimitedShopCategoryDataModel" />
+          <EntitySet Name="LimitedShopCommentDataModels" EntityType="LimitedModel.LimitedShopCommentDataModel" />
+          <EntitySet Name="LimitedShopDeliveryMethodDataModels" EntityType="LimitedModel.LimitedShopDeliveryMethodDataModel" />
+          <EntitySet Name="LimitedShopPaymentMethodDataModels" EntityType="LimitedModel.LimitedShopPaymentMethodDataModel" />
+          <EntitySet Name="LimitedShopRankDataModels" EntityType="LimitedModel.LimitedShopRankDataModel" />
+          <EntitySet Name="LimitedShopServeLocationDataModels" EntityType="LimitedModel.LimitedShopServeLocationDataModel" />
+          <EntitySet Name="LimitedShopStatisticDataModels" EntityType="LimitedModel.LimitedShopStatisticDataModel" />
+          <AssociationSet Name="FK_Basket_Shop" Association="LimitedModel.FK_Basket_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="Basket" EntitySet="LimitedBasketDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Shop" Association="LimitedModel.FK_Product_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="Product" EntitySet="LimitedProductDataModelBases" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopCategory_Shop" Association="LimitedModel.FK_ShopCategory_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="ShopCategory" EntitySet="LimitedShopCategoryDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopComment_Shop" Association="LimitedModel.FK_ShopComment_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="ShopComment" EntitySet="LimitedShopCommentDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopDeliveryMethod_Shop" Association="LimitedModel.FK_ShopDeliveryMethod_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="ShopDeliveryMethod" EntitySet="LimitedShopDeliveryMethodDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopPaymentMethod_Shop" Association="LimitedModel.FK_ShopPaymentMethod_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="ShopPaymentMethod" EntitySet="LimitedShopPaymentMethodDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopRank_Shop" Association="LimitedModel.FK_ShopRank_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="ShopRank" EntitySet="LimitedShopRankDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopServeLocation_Shop" Association="LimitedModel.FK_ShopServeLocation_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="ShopServeLocation" EntitySet="LimitedShopServeLocationDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopStatistics_Shop" Association="LimitedModel.FK_ShopStatistics_Shop">
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+            <End Role="ShopStatistic" EntitySet="LimitedShopStatisticDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_AccountBuyer" Association="LimitedModel.FK_Basket_AccountBuyer">
+            <End Role="AccountBuyer" EntitySet="LimitedAccountDataModelBases" />
+            <End Role="Basket" EntitySet="LimitedBasketDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_AccountSeller" Association="LimitedModel.FK_Shop_AccountSeller">
+            <End Role="AccountSeller" EntitySet="LimitedAccountDataModelBases" />
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+          </AssociationSet>
+          <EntitySet Name="LimitedBasketItemDataModels" EntityType="LimitedModel.LimitedBasketItemDataModel" />
+          <AssociationSet Name="FK_BasketItem_Basket" Association="LimitedModel.FK_BasketItem_Basket">
+            <End Role="Basket" EntitySet="LimitedBasketDataModels" />
+            <End Role="BasketItem" EntitySet="LimitedBasketItemDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BasketItem_Product" Association="LimitedModel.FK_BasketItem_Product">
+            <End Role="Product" EntitySet="LimitedProductDataModelBases" />
+            <End Role="BasketItem" EntitySet="LimitedBasketItemDataModels" />
+          </AssociationSet>
+          <EntitySet Name="LimitedBrandDataModels" EntityType="LimitedModel.LimitedBrandDataModel" />
+          <AssociationSet Name="FK_Product_Brand" Association="LimitedModel.FK_Product_Brand">
+            <End Role="Brand" EntitySet="LimitedBrandDataModels" />
+            <End Role="Product" EntitySet="LimitedProductDataModelBases" />
+          </AssociationSet>
+          <EntitySet Name="LimitedResourceDataModels" EntityType="LimitedModel.LimitedResourceDataModel" />
+          <EntitySet Name="LimitedCategoryDataModels" EntityType="LimitedModel.LimitedCategoryDataModel" />
+          <AssociationSet Name="FK_Category_Category" Association="LimitedModel.FK_Category_Category">
+            <End Role="Category" EntitySet="LimitedCategoryDataModels" />
+            <End Role="Category1" EntitySet="LimitedCategoryDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory_Category" Association="LimitedModel.FK_ProductCategory_Category">
+            <End Role="Category" EntitySet="LimitedCategoryDataModels" />
+            <End Role="ProductCategory" EntitySet="LimitedProductCategoryDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopCategory_Category" Association="LimitedModel.FK_ShopCategory_Category">
+            <End Role="Category" EntitySet="LimitedCategoryDataModels" />
+            <End Role="ShopCategory" EntitySet="LimitedShopCategoryDataModels" />
+          </AssociationSet>
+          <EntitySet Name="LimitedUserDataModels" EntityType="LimitedModel.LimitedUserDataModel" />
+          <AssociationSet Name="FK_Account_User" Association="LimitedModel.FK_Account_User">
+            <End Role="User" EntitySet="LimitedUserDataModels" />
+            <End Role="Account" EntitySet="LimitedAccountDataModelBases" />
+          </AssociationSet>
+          <EntitySet Name="LimitedLocationDataModels" EntityType="LimitedModel.LimitedLocationDataModel" />
+          <AssociationSet Name="FK_Basket_Location_DestinationLocation" Association="LimitedModel.FK_Basket_Location_DestinationLocation">
+            <End Role="Location" EntitySet="LimitedLocationDataModels" />
+            <End Role="Basket" EntitySet="LimitedBasketDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Basket_Location_SourceLocation" Association="LimitedModel.FK_Basket_Location_SourceLocation">
+            <End Role="Location" EntitySet="LimitedLocationDataModels" />
+            <End Role="Basket" EntitySet="LimitedBasketDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Location" Association="LimitedModel.FK_Location_Location">
+            <End Role="Location" EntitySet="LimitedLocationDataModels" />
+            <End Role="Location1" EntitySet="LimitedLocationDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Shop_Location" Association="LimitedModel.FK_Shop_Location">
+            <End Role="Location" EntitySet="LimitedLocationDataModels" />
+            <End Role="Shop" EntitySet="LimitedShopDataModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopServeLocation_Location" Association="LimitedModel.FK_ShopServeLocation_Location">
+            <End Role="Location" EntitySet="LimitedLocationDataModels" />
+            <End Role="ShopServeLocation" EntitySet="LimitedShopServeLocationDataModels" />
+          </AssociationSet>
+          <EntitySet Name="LimitedTransactionDataModelBases" EntityType="LimitedModel.LimitedTransactionDataModelBase" />
+        </EntityContainer>
+        <EntityType Name="LimitedAccountTransactionDataModel" BaseType="LimitedModel.LimitedTransactionDataModelBase">
+          <Property Name="AccountId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedBasketTransactionDataModel" BaseType="LimitedModel.LimitedTransactionDataModelBase">
+          <Property Name="BasketId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedTransactionDataModelBase">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReferenceNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BuyerAccountNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalAmount" Type="Int32" Nullable="false" />
+          <Property Name="ReverseAmount" Type="Int32" Nullable="false" />
+          <Property Name="TransactionState" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LimitedAccountDataModelBase">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Image" Type="Guid" />
+          <Property Name="ChargeAmount" Type="Int32" Nullable="false" />
+          <Property Name="Enable" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedBasketDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="AccountBuyerId" Type="Int32" Nullable="false" />
+          <Property Name="SourceLocationId" Type="Int32" Nullable="false" />
+          <Property Name="DestinationLocationId" Type="Int32" Nullable="false" />
+          <Property Name="ShopDeliveryMethodId" Type="Int32" Nullable="false" />
+          <Property Name="ShopPaymentMethodId" Type="Int32" Nullable="false" />
+          <Property Name="Fullname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="DestinationAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StatusDescriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Workflow" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsTheUserDescriptionNeededToConfirm" Type="Boolean" Nullable="false" />
+          <Property Name="TotalItemsOriginAmount" Type="Int32" Nullable="false" />
+          <Property Name="TotalItemsTaxAmount" Type="Int32" Nullable="false" />
+          <Property Name="TotalItemsDiscountAmount" Type="Int32" Nullable="false" />
+          <Property Name="DeliveryAmount" Type="Int32" Nullable="false" />
+          <Property Name="TaxAmount" Type="Int32" Nullable="false" />
+          <Property Name="DiscountAmount" Type="Int32" Nullable="false" />
+          <Property Name="ApaGroupCommissionAmount" Type="Int32" Nullable="false" />
+          <Property Name="FinalAmount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="AccountAccountTransaction">
+          <End Type="LimitedModel.LimitedAccountDataModelBase" Role="Account" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedAccountTransactionDataModel" Role="AccountTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AccountTransaction">
+              <PropertyRef Name="AccountId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BasketBasketTransaction">
+          <End Type="LimitedModel.LimitedBasketDataModel" Role="Basket" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedBasketTransactionDataModel" Role="BasketTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketTransaction">
+              <PropertyRef Name="BasketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedProductDataModelBase">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BrandId" Type="Int32" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="PersianName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnglishName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SearchHelper" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LogoIdentifier" Type="Guid" />
+          <Property Name="ExhibitionStartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExhibitionExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsAvailable" Type="Boolean" Nullable="false" />
+          <Property Name="IsModifingCausedDisable" Type="Boolean" Nullable="false" />
+          <Property Name="Enable" Type="Boolean" Nullable="false" />
+          <Property Name="IsProductNeededToConfirm" Type="Boolean" Nullable="false" />
+          <Property Name="IsPriceNeededToConfirm" Type="Boolean" Nullable="false" />
+          <Property Name="Properties" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SelectableProperties" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupportedSelectableProperties" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AttachmentIdentifiers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImageIdentifiers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LimitedProductCategoryDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedProductCommentDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CommentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LimitedProductNumerableDataModelBase" BaseType="LimitedModel.LimitedProductDataModelBase">
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Store" Type="Int32" />
+          <Property Name="RetailUnitPriceAmount" Type="Int32" />
+          <Property Name="RetailConditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WholesaleUnitPriceAmount" Type="Int32" />
+          <Property Name="WholesaleConditions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LimitedProductRankDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rank" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LimitedProductStatisticDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="LikeProduct" Type="Int32" Nullable="false" />
+          <Property Name="DislikeProduct" Type="Int32" Nullable="false" />
+          <Property Name="VisitCount" Type="Int32" Nullable="false" />
+          <Property Name="BoughtCount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ProductCategory_Product">
+          <End Type="LimitedModel.LimitedProductDataModelBase" Role="Product" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedProductCategoryDataModel" Role="ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductComment_Product">
+          <End Type="LimitedModel.LimitedProductDataModelBase" Role="Product" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedProductCommentDataModel" Role="ProductComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductComment">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductRank_Product">
+          <End Type="LimitedModel.LimitedProductDataModelBase" Role="Product" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedProductRankDataModel" Role="ProductRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductRank">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductStatistics_Product">
+          <End Type="LimitedModel.LimitedProductDataModelBase" Role="Product" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedProductStatisticDataModel" Role="ProductStatistic" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductStatistic">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedShopDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AccountSellerId" Type="Int32" Nullable="false" />
+          <Property Name="LocationId" Type="Int32" Nullable="false" />
+          <Property Name="Enable" Type="Boolean" Nullable="false" />
+          <Property Name="PersianName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EnglishName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SearchHelper" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LogoIdentifier" Type="Guid" />
+          <Property Name="AreBasketsNeededToConfirm" Type="Boolean" Nullable="false" />
+          <Property Name="ImageIdentifiers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Tax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApaGroupCommission" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LimitedShopCategoryDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedShopCommentDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CommentType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LimitedShopDeliveryMethodDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Enable" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedShopPaymentMethodDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Enable" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedShopRankDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rank" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LimitedShopServeLocationDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ShopId" Type="Int32" Nullable="false" />
+          <Property Name="LocationId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LimitedShopStatisticDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ApaGroupRank" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LikeShop" Type="Int32" Nullable="false" />
+          <Property Name="DislikeShop" Type="Int32" Nullable="false" />
+          <Property Name="BoughtCount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Basket_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedBasketDataModel" Role="Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedProductDataModelBase" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopCategory_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopCategoryDataModel" Role="ShopCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopCategory">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopComment_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopCommentDataModel" Role="ShopComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopComment">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopDeliveryMethod_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopDeliveryMethodDataModel" Role="ShopDeliveryMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopDeliveryMethod">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopPaymentMethod_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopPaymentMethodDataModel" Role="ShopPaymentMethod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopPaymentMethod">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopRank_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopRankDataModel" Role="ShopRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopRank">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopServeLocation_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopServeLocationDataModel" Role="ShopServeLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopServeLocation">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopStatistics_Shop">
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopStatisticDataModel" Role="ShopStatistic" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopStatistic">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedAccountAdministratorDataModel" BaseType="LimitedModel.LimitedAccountDataModelBase">
+        </EntityType>
+        <EntityType Name="LimitedAccountBuyerDataModel" BaseType="LimitedModel.LimitedAccountDataModelBase">
+        </EntityType>
+        <EntityType Name="LimitedAccountRequirementDataModel" BaseType="LimitedModel.LimitedAccountDataModelBase">
+        </EntityType>
+        <EntityType Name="LimitedAccountSellerDataModel" BaseType="LimitedModel.LimitedAccountDataModelBase">
+          <Property Name="MinimumChargeAmountForSelling" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Basket_AccountBuyer">
+          <End Type="LimitedModel.LimitedAccountBuyerDataModel" Role="AccountBuyer" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedBasketDataModel" Role="Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountBuyer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="AccountBuyerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_AccountSeller">
+          <End Type="LimitedModel.LimitedAccountSellerDataModel" Role="AccountSeller" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AccountSeller">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Shop">
+              <PropertyRef Name="AccountSellerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedBasketItemDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="BasketId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="Ordered" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OriginAmount" Type="Int32" Nullable="false" />
+          <Property Name="TaxAmount" Type="Int32" Nullable="false" />
+          <Property Name="DiscountAmount" Type="Int32" Nullable="false" />
+          <Property Name="FinalAmount" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_BasketItem_Basket">
+          <End Type="LimitedModel.LimitedBasketDataModel" Role="Basket" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedBasketItemDataModel" Role="BasketItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Basket">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketItem">
+              <PropertyRef Name="BasketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BasketItem_Product">
+          <End Type="LimitedModel.LimitedProductDataModelBase" Role="Product" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedBasketItemDataModel" Role="BasketItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BasketItem">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedBrandDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LogoIdentifier" Type="Guid" />
+        </EntityType>
+        <Association Name="FK_Product_Brand">
+          <End Type="LimitedModel.LimitedBrandDataModel" Role="Brand" Multiplicity="0..1" />
+          <End Type="LimitedModel.LimitedProductDataModelBase" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedResourceDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResourceIdentifier" Type="Guid" Nullable="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="PhysicalAddress" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LimitedCategoryDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="HierarchyCode" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LogoIdentifier" Type="Guid" />
+        </EntityType>
+        <Association Name="FK_Category_Category">
+          <End Type="LimitedModel.LimitedCategoryDataModel" Role="Category" Multiplicity="0..1" />
+          <End Type="LimitedModel.LimitedCategoryDataModel" Role="Category1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Category1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory_Category">
+          <End Type="LimitedModel.LimitedCategoryDataModel" Role="Category" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedProductCategoryDataModel" Role="ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopCategory_Category">
+          <End Type="LimitedModel.LimitedCategoryDataModel" Role="Category" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopCategoryDataModel" Role="ShopCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedUserDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Family" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PersonalCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LocationId" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Account_User">
+          <End Type="LimitedModel.LimitedUserDataModel" Role="User" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedAccountDataModelBase" Role="Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LimitedLocationDataModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" ConcurrencyMode="Fixed" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="HierarchyCode" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LogoIdentifier" Type="Guid" />
+        </EntityType>
+        <Association Name="FK_Basket_Location_DestinationLocation">
+          <End Type="LimitedModel.LimitedLocationDataModel" Role="Location" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedBasketDataModel" Role="Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="DestinationLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Basket_Location_SourceLocation">
+          <End Type="LimitedModel.LimitedLocationDataModel" Role="Location" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedBasketDataModel" Role="Basket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Basket">
+              <PropertyRef Name="SourceLocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Location">
+          <End Type="LimitedModel.LimitedLocationDataModel" Role="Location" Multiplicity="0..1" />
+          <End Type="LimitedModel.LimitedLocationDataModel" Role="Location1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Location1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Shop_Location">
+          <End Type="LimitedModel.LimitedLocationDataModel" Role="Location" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopDataModel" Role="Shop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Shop">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopServeLocation_Location">
+          <End Type="LimitedModel.LimitedLocationDataModel" Role="Location" Multiplicity="1" />
+          <End Type="LimitedModel.LimitedShopServeLocationDataModel" Role="ShopServeLocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopServeLocation">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ApaServiceModelStoreContainer" CdmEntityContainer="LimitedEntities">
+          <EntitySetMapping Name="LimitedAccountDataModelBases">
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedAccountDataModelBase)">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ChargeAmount" ColumnName="ChargeAmount" />
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedAccountBuyerDataModel)">
+              <MappingFragment StoreEntitySet="AccountBuyer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedAccountSellerDataModel)">
+              <MappingFragment StoreEntitySet="AccountSeller">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MinimumChargeAmountForSelling" ColumnName="MinimumChargeAmountForSelling" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedAccountAdministratorDataModel)">
+              <MappingFragment StoreEntitySet="AccountAdministrator">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedAccountRequirementDataModel)">
+              <MappingFragment StoreEntitySet="AccountRequirement">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedBasketDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedBasketDataModel">
+              <MappingFragment StoreEntitySet="Basket">
+                <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+                <ScalarProperty Name="ApaGroupCommissionAmount" ColumnName="ApaGroupCommissionAmount" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="DeliveryAmount" ColumnName="DeliveryAmount" />
+                <ScalarProperty Name="TotalItemsDiscountAmount" ColumnName="TotalItemsDiscountAmount" />
+                <ScalarProperty Name="TotalItemsTaxAmount" ColumnName="TotalItemsTaxAmount" />
+                <ScalarProperty Name="TotalItemsOriginAmount" ColumnName="TotalItemsOriginAmount" />
+                <ScalarProperty Name="IsTheUserDescriptionNeededToConfirm" ColumnName="IsTheUserDescriptionNeededToConfirm" />
+                <ScalarProperty Name="UserDescription" ColumnName="UserDescription" />
+                <ScalarProperty Name="Workflow" ColumnName="Workflow" />
+                <ScalarProperty Name="StatusDescriptions" ColumnName="StatusDescriptions" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DestinationAddress" ColumnName="DestinationAddress" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="ShopPaymentMethodId" ColumnName="ShopPaymentMethodId" />
+                <ScalarProperty Name="ShopDeliveryMethodId" ColumnName="ShopDeliveryMethodId" />
+                <ScalarProperty Name="DestinationLocationId" ColumnName="DestinationLocationId" />
+                <ScalarProperty Name="SourceLocationId" ColumnName="SourceLocationId" />
+                <ScalarProperty Name="AccountBuyerId" ColumnName="AccountBuyerId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedProductDataModelBases">
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedProductDataModelBase)">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="PersianName" ColumnName="PersianName" />
+                <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+                <ScalarProperty Name="SearchHelper" ColumnName="SearchHelper" />
+                <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+                <ScalarProperty Name="ExhibitionStartDate" ColumnName="ExhibitionStartDate" />
+                <ScalarProperty Name="ExhibitionExpireDate" ColumnName="ExhibitionExpireDate" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="IsModifingCausedDisable" ColumnName="IsModifingCausedDisable" />
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="IsProductNeededToConfirm" ColumnName="IsProductNeededToConfirm" />
+                <ScalarProperty Name="IsPriceNeededToConfirm" ColumnName="IsPriceNeededToConfirm" />
+                <ScalarProperty Name="Properties" ColumnName="Properties" />
+                <ScalarProperty Name="SelectableProperties" ColumnName="SelectableProperties" />
+                <ScalarProperty Name="SupportedSelectableProperties" ColumnName="SupportedSelectableProperties" />
+                <ScalarProperty Name="AttachmentIdentifiers" ColumnName="AttachmentIdentifiers" />
+                <ScalarProperty Name="ImageIdentifiers" ColumnName="ImageIdentifiers" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedProductNumerableDataModelBase)">
+              <MappingFragment StoreEntitySet="ProductNumerable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+                <ScalarProperty Name="Store" ColumnName="Store" />
+                <ScalarProperty Name="RetailUnitPriceAmount" ColumnName="RetailUnitPriceAmount" />
+                <ScalarProperty Name="RetailConditions" ColumnName="RetailConditions" />
+                <ScalarProperty Name="WholesaleUnitPriceAmount" ColumnName="WholesaleUnitPriceAmount" />
+                <ScalarProperty Name="WholesaleConditions" ColumnName="WholesaleConditions" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedProductCategoryDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedProductCategoryDataModel">
+              <MappingFragment StoreEntitySet="ProductCategory">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedProductCommentDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedProductCommentDataModel">
+              <MappingFragment StoreEntitySet="ProductComment">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="CommentType" ColumnName="CommentType" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedProductRankDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedProductRankDataModel">
+              <MappingFragment StoreEntitySet="ProductRank">
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedProductStatisticDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedProductStatisticDataModel">
+              <MappingFragment StoreEntitySet="ProductStatistics">
+                <ScalarProperty Name="BoughtCount" ColumnName="BoughtCount" />
+                <ScalarProperty Name="VisitCount" ColumnName="VisitCount" />
+                <ScalarProperty Name="DislikeProduct" ColumnName="DislikeProduct" />
+                <ScalarProperty Name="LikeProduct" ColumnName="LikeProduct" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopDataModel">
+              <MappingFragment StoreEntitySet="Shop">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ApaGroupCommission" ColumnName="ApaGroupCommission" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="Tax" ColumnName="Tax" />
+                <ScalarProperty Name="ImageIdentifiers" ColumnName="ImageIdentifiers" />
+                <ScalarProperty Name="AreBasketsNeededToConfirm" ColumnName="AreBasketsNeededToConfirm" />
+                <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+                <ScalarProperty Name="SearchHelper" ColumnName="SearchHelper" />
+                <ScalarProperty Name="EnglishName" ColumnName="EnglishName" />
+                <ScalarProperty Name="PersianName" ColumnName="PersianName" />
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="AccountSellerId" ColumnName="AccountSellerId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopCategoryDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopCategoryDataModel">
+              <MappingFragment StoreEntitySet="ShopCategory">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopCommentDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopCommentDataModel">
+              <MappingFragment StoreEntitySet="ShopComment">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="CommentType" ColumnName="CommentType" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopDeliveryMethodDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopDeliveryMethodDataModel">
+              <MappingFragment StoreEntitySet="ShopDeliveryMethod">
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopPaymentMethodDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopPaymentMethodDataModel">
+              <MappingFragment StoreEntitySet="ShopPaymentMethod">
+                <ScalarProperty Name="Enable" ColumnName="Enable" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopRankDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopRankDataModel">
+              <MappingFragment StoreEntitySet="ShopRank">
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopServeLocationDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopServeLocationDataModel">
+              <MappingFragment StoreEntitySet="ShopServeLocation">
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedShopStatisticDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedShopStatisticDataModel">
+              <MappingFragment StoreEntitySet="ShopStatistics">
+                <ScalarProperty Name="BoughtCount" ColumnName="BoughtCount" />
+                <ScalarProperty Name="DislikeShop" ColumnName="DislikeShop" />
+                <ScalarProperty Name="LikeShop" ColumnName="LikeShop" />
+                <ScalarProperty Name="ApaGroupRank" ColumnName="ApaGroupRank" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedBasketItemDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedBasketItemDataModel">
+              <MappingFragment StoreEntitySet="BasketItem">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FinalAmount" ColumnName="FinalAmount" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="OriginAmount" ColumnName="OriginAmount" />
+                <ScalarProperty Name="Ordered" ColumnName="Ordered" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="BasketId" ColumnName="BasketId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedBrandDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedBrandDataModel">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedResourceDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedResourceDataModel">
+              <MappingFragment StoreEntitySet="Resource">
+                <ScalarProperty Name="PhysicalAddress" ColumnName="PhysicalAddress" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ResourceIdentifier" ColumnName="ResourceIdentifier" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedCategoryDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedCategoryDataModel">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="HierarchyCode" ColumnName="HierarchyCode" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedUserDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedUserDataModel">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="PersonalCode" ColumnName="PersonalCode" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedLocationDataModels">
+            <EntityTypeMapping TypeName="LimitedModel.LimitedLocationDataModel">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="LogoIdentifier" ColumnName="LogoIdentifier" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="HierarchyCode" ColumnName="HierarchyCode" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LimitedTransactionDataModelBases">
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedTransactionDataModelBase)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+              <MappingFragment StoreEntitySet="Transaction">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+                <ScalarProperty Name="BuyerAccountNumber" ColumnName="BuyerAccountNumber" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="ReverseAmount" ColumnName="ReverseAmount" />
+                <ScalarProperty Name="TransactionState" ColumnName="TransactionState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedAccountTransactionDataModel)" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+              <MappingFragment StoreEntitySet="AccountTransaction">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(LimitedModel.LimitedBasketTransactionDataModel)">
+              <MappingFragment StoreEntitySet="BasketTransaction">
+                
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BasketId" ColumnName="BasketId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

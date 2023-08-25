@@ -1,0 +1,5 @@
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Framework.Dal.DataStructure.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.Bin\ApaService.Framework.Dal.DataStructure.pdb
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Framework\ApaService.Framework.Dal.DataStructure\obj\Debug\ApaService.Framework.Dal.DataStructure.csprojResolveAssemblyReference.cache
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Framework\ApaService.Framework.Dal.DataStructure\obj\Debug\ApaService.Framework.Dal.DataStructure.dll
+H:\IRAPA.ir\ApaService\Source\ApaGroup.ApaService\ApaService.Framework\ApaService.Framework.Dal.DataStructure\obj\Debug\ApaService.Framework.Dal.DataStructure.pdb

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9922b423341944a48545f70c3442f306" Name="Diagram1">
+        <EntityTypeShape EntityType="SecurityModel.SecurityAccountDataModelBase" Width="3.5" PointX="6.25" PointY="5.5" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityPrivacyAccountPermissionGroupDataModel" Width="3.5" PointX="6.25" PointY="3.125" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityPrivacyGroupDataModel" Width="3.5" PointX="1.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityPrivacyPermissionDataModel" Width="3.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityPrivacyPermissionGroupDataModel" Width="3.5" PointX="6.25" PointY="0.75" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityPrivacySecureDataDataModel" Width="3.5" PointX="10.75" PointY="5.5" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityPrivacyAccountPermissionDataModel" Width="3.5" PointX="10.75" PointY="3.125" />
+        <AssociationConnector Association="SecurityModel.FK_AccountPermissionGroup_Account" />
+        <AssociationConnector Association="SecurityModel.FK_SecureData_Account" />
+        <AssociationConnector Association="SecurityModel.FK_AccountPermissionGroup_PermissionGroup" />
+        <AssociationConnector Association="SecurityModel.FK_PermissionGroup_Group" />
+        <AssociationConnector Association="SecurityModel.FK_PermissionGroup_Permission" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityUserDataModel" Width="3.5" PointX="6.25" PointY="8.875" />
+        <EntityTypeShape EntityType="SecurityModel.SecurityUserLoginDataModel" Width="3.5" PointX="10.75" PointY="8.875" />
+        <AssociationConnector Association="SecurityModel.FK_Account_User" />
+        <AssociationConnector Association="SecurityModel.FK_UserLogin_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
